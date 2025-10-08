@@ -1,0 +1,2571 @@
+{
+  "name": "social-media automation",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# 🧑‍🦱 User Input for Social Media Posts \n💡 Unpin default data to get started",
+        "height": 360,
+        "width": 360,
+        "color": 4
+      },
+      "id": "d0bfd65a-1e82-4124-bb5f-989eeee7286c",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        176,
+        16
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "#  Data extracton and cleaning\n",
+        "height": 600,
+        "width": 592,
+        "color": 6
+      },
+      "id": "0ef1fd79-50a8-485a-8b6f-0764d6881fae",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        560,
+        -64
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# 👍 Approve Content Before Proceeding",
+        "height": 1352,
+        "width": 1344,
+        "color": 4
+      },
+      "id": "902fae65-d065-45cd-be7a-d9078e969f63",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2656,
+        -480
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# ✉️ Prepare & Format Approval Email",
+        "height": 960,
+        "width": 868,
+        "color": 5
+      },
+      "id": "d027e781-849e-470e-ac89-18f76e6e8ad2",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1760,
+        -384
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"name\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"description\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"platform_posts\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"properties\": {\n\t\t\t\t\"LinkedIn\": {\n\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\"properties\": {\n                        \"image_suggestion\": {\n                  \t\t\t\"type\": \"string\"\n                  \t\t},\n\t\t\t\t\t\t\"post\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"hashtags\": {\n\t\t\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"call_to_action\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"Instagram\": {\n\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\"properties\": {\n\t\t\t\t\t\t\"image_suggestion\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"caption\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"hashtags\": {\n\t\t\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"emojis\": {\n\t\t\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"call_to_action\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"Facebook\": {\n\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\"properties\": {\n\t\t\t\t\t\t\"post\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"hashtags\": {\n\t\t\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"call_to_action\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"image_suggestion\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"Twitter\": {\n\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\"properties\": {\n                        \"video_suggestion\": {\n                \t\t\t\"type\": \"string\"\n                \t\t},\n                        \"image_suggestion\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"post\": {\n\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"hashtags\": {\n\t\t\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"character_limit\": {\n\t\t\t\t\t\t\t\"type\": \"integer\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t},\n      \n                \"YouTube_Shorts\": {\n                  \t\"type\": \"object\",\n                  \t\"properties\": {\n                  \t\t\"video_suggestion\": {\n                  \t\t\t\"type\": \"string\"\n                  \t\t},\n                  \t\t\"title\": {\n                  \t\t\t\"type\": \"string\"\n                  \t\t},\n                          \"description\": {\n                              \"type\": \"string\"\n                          },\n                          \"hashtags\": {\n                              \"type\": \"array\",\n                              \"items\": {\n                                  \"type\": \"string\"\n                              }\n                          },\n                          \"call_to_action\": {\n                              \"type\": \"string\"\n                          }\n                      }\n                  }\n\t\t\t}\n\t\t},\n\t\t\"additional_notes\": {\n\t\t\t\"type\": \"string\"\n\t\t}\n\t}\n}\n"
+      },
+      "id": "b2790d86-e629-430d-bf98-2b8845f668eb",
+      "name": "Social Media Content",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        1376,
+        320
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "=smasherlavish@gmail.com",
+        "subject": "=🔥FOR APPROVAL🔥{{ $('Social Media Content Factory').item.json.output.name }} - {{ $('Social Media Content Factory').item.json.output.description }}",
+        "message": "={{ $json.output }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          }
+        }
+      },
+      "id": "2f349387-7941-464b-a6bf-c7bcdc3861d1",
+      "name": "Gmail User for Approval",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        2336,
+        1536
+      ],
+      "webhookId": "c46cf421-ddb6-45a8-b83b-80b381666f0e",
+      "typeVersion": 2.1,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "FtX6rezU8m3wqtX4",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Step 1️⃣: Create Social Media Written Content\nNote:  \nYou could use the output of step 1 to create your written content and manually post if required.  \nYou so not have to implement step 2.",
+        "height": 1368,
+        "width": 5840,
+        "color": 7
+      },
+      "id": "993c2d02-5c56-4fea-8d59-680e10f824c7",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        160,
+        -496
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a **content creation AI** for www.wellm.co, a leading creator of **wellm**.\n\n**Your goal is to craft engaging, platform-specific content for LinkedIn, Instagram, Facebook, Twitter (X), and YouTube Shorts & Youtube long video.Each post must align with the platform’s audience preferences, tone, and style while reflecting workflows.diy's expertise in Preventive Health & Wellness. The content should focus on preventive health practices, wellness tips, and self-care routines that promote a healthy lifestyle and long-term well-being.\n\nKey Objectives:\n\nPlatform Optimization: Tailor content format, tone, and hashtags to suit each platform’s algorithm and audience engagement patterns.\n\nSEO,GEO,AEO, Hashtags: Use a mix of general preventive health and wellness hashtags, alongside trending platform-specific hashtags to maximize reach.\n\nEngagement Focus: Create content that encourages interaction through wellness tips, mental health support, exercise routines, and nutrition guides.\n\nConsistency: Maintain a balanced & empathetic tone across all platforms, mixing professionalism with approachability.\n\nData-Driven Strategy: Analyze trends in preventive healthcare and wellness habits to refine content strategy and hashtag usage.\n\nGeneral Hashtags:\n\n#PreventiveHealth #WellnessJourney #HealthyLiving #SelfCare #MindBodyBalance #HealthTips #HolisticHealth #Workflowsdiy\n\nPlatform-Specific Guidelines:\n1. LinkedIn\n\nStyle: Professional, insightful, and educational.\n\nTone: Business-oriented, focusing on preventive healthcare strategies for professionals and organizations, such as stress management and employee well-being.\n\nContent Length: 3-4 sentences.\n\nHashtags: #WorkplaceWellness #HealthAtWork #Productivity #PreventiveCare #Leadership\n\nCTA: “How do you prioritize preventive health at work? Share your strategies in the comments or reach out to us for more tips.”\n\n\n2. Instagram\n\nStyle: Visual storytelling with creative captions.\n\nTone: Empowering and inspiring; use emojis and vibrant visuals to showcase holistic wellness tips,emotional wellbeing, nutrition, and self-care routines.\n\nContent Length: 2-3 sentences paired with compelling visuals (e.g., healthy meal prep, daily exercise).\n\nHashtags: #HealthyLiving #MindfulnessMatters #PreventiveHealth #WellnessTips #SelfCareSunday\n\nCTA: “Tag someone who needs to prioritize their wellness routine! Visit the link in bio for more health inspiration.”\n\n3. Facebook\n\nStyle: Friendly, community-focused.\n\nTone: Conversational and relatable, with personal stories or tips on how to incorporate preventive health in everyday life.\n\nContent Length: 2-3 sentences.\n\nHashtags: #HealthForAll #WellnessCommunity #PreventiveCare #HealthyHabits\n\nCTA: What preventive health practices do you follow daily? Comment below!\n\n4. Twitter (X)\n\"X-Twitter\": {\n    \"type\": \"object\",\n    \"properties\": {\n        \"video_suggestion\": {\n            \"type\": \"string\"\n        },\n        \"image_suggestion\": {\n            \"type\": \"string\"\n        },\n        \"post\": {\n            \"type\": \"string\"\n        },\n        \"hashtags\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"type\": \"string\"\n            }\n        },\n        \"character_limit\": {\n            \"type\": \"integer\"\n        }\n    }\n}\n  \n\n5. YouTube Shorts\n\nStyle: Short-form video content with quick tutorials or tips on wellness.\n\nTone: Authoritative yet accessible; present preventive health practices in a quick, digestible format.\n\nContent Length: Under 1 minute.\n\nHashtags: #WellnessTips #HealthyHabits #SelfCare\n\nCTA: “Subscribe for more daily wellness hacks!”\n\nContent Creation Workflow:\n\nFor every post:\n\nUse the following input fields:\n\nTopic/About the Post: {{ $json.Topic }}\n\nLink : {{ $json.Link }}\n\nAdapt the tone and style according to platform guidelines above.\n\nEnsure every post reflects \"wellm\" mission of delivering high-quality automation insights while maximizing engagement across platforms.\n\nFollow the provided JSON schema for your reponse.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Use the provided tools to research the topic based on latest information.  Todays date is {{ $now }}"
+        }
+      },
+      "id": "da40a01f-ccd1-4ee9-9efa-b8853695eed4",
+      "name": "Social Media Content Factory",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        1248,
+        112
+      ],
+      "retryOnFail": true,
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Generate clean, modern HTML email content from the provided JSON data with these requirements:\n- Use table-based layout with inline CSS for email compatibility\n- Create card sections for each platform containing:\n  • Title header (20px) \n  • Post content (16px) \n  • Video/image suggestions (italic 14px)\n  • Hashtag list (inline-block with # prefix)\n  • Emoji preservation where present\n  • Call-to-action (bold 14px)\n- Structure using:\n  • 600px max-width container\n  • 20px padding between cards\n  • Left-aligned text hierarchy\n  • Arial/sans-serif font stack\n  • Email-safe colors (#333 text, #555 secondary)\n- Include all platform-specific elements:\n  ▶ Video/image suggestions in italic\n  ▶ Hashtags as linked search terms\n  ▶ Emojis in original positions\n  ▶ Character limits for Twitter\n  ▶ Platform-specific CTAs\n  ▶ Visual quality reminders\n- Format hashtags as:\n  <span style=\"display: inline-block; background: #f0f0f0; padding: 2px 6px; margin: 2px; border-radius: 4px;\">#tag</span>\n\nInput data:{{ $json.output.LinkedIn }} {{ $json.output }}\n\nRemove ALL code blocks and comments. Output ONLY the raw HTML with:\n- Platform cards in JSON order\n- All data elements represented\n- Mobile-responsive tables\n- W3C-valid markup\n\n## Example HTML:\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#fbfcfe;border:1px solid #dbdfe7;border-radius:8px\">\n\t\t<tbody><tr>\n\t\t\t<td align=\"center\" style=\"padding:24px 0\">\n\t\t\t\t<table width=\"448\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%;max-width:448px;background-color:#ffffff;border:1px solid #dbdfe7;border-radius:8px;padding:24px\">\n\t\t\t\t\t<tbody><tr>\n\t\t\t\t\t\t<td style=\"text-align:center;padding-top:8px;font-family:Arial,sans-serif;font-size:14px;color:#7e8186\">\n\t\t\t\t\t\t\t<p style=\"white-space:pre-line\"></p><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;font-family:Arial,sans-serif;color:#333\"><tbody><tr><td style=\"padding:20px\"><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">LinkedIn</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">Discover why n8n stands out as the premier workflow automation tool. Its flexibility and open-source nature empower businesses to create custom solutions that drive efficiency and innovation.</td></tr><tr><td style=\"font-size:14px;font-style:italic;padding-bottom:10px\">Video/Image suggestion pending</td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#Innovation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#Automation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>WorkflowSolutions</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>DigitalTransformation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>Leadership</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#WorkflowAutomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\"><wbr>#TechSolutions</span></td></tr><tr><td style=\"font-size:14px;font-weight:bold\">Visit workflows.diy to explore how n8n can transform your business processes!</td></tr></tbody></table><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">Instagram</td></tr><tr><td style=\"font-size:14px;font-style:italic;padding-bottom:10px\">Eye-catching infographic comparing n8n to other automation tools, highlighting its unique features.</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">n8n: The ultimate workflow automation tool! <img data-emoji=\"💡\" class=\"an1\" alt=\"💡\" aria-label=\"💡\" draggable=\"false\" src=\"https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4a1/32.png\" loading=\"lazy\"> Unlock limitless possibilities with its open-source platform. Boost your productivity and streamline your processes. <img data-emoji=\"💤\" class=\"an1\" alt=\"💤\" aria-label=\"💤\" draggable=\"false\" src=\"https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4a4/32.png\" loading=\"lazy\"></td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#AutomationLife</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#TechInnovation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\"><wbr>#WorkflowTips</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#Programming</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>Engineering</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#WorkflowAutomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\"><wbr>#TechSolutions</span></td></tr><tr><td style=\"font-size:14px;font-weight:bold\">Visit our website: <a href=\"https://n8n.io/\" target=\"_blank\" data-saferedirecturl=\"https://www.google.com/url?q=https://n8n.io/&amp;source=gmail&amp;ust=1741030878129000&amp;usg=AOvVaw1Nr6ek3eGwe94zlbPaJrzT\">https://n8n.io/</a> #AutomationLife #TechInnovation #WorkflowTips #Programming #Engineering</td></tr></tbody></table><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">Facebook</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">See why businesses are choosing n8n for their workflow automation needs. From its user-friendly interface to its powerful customization options, n8n is revolutionizing how companies approach automation.</td></tr><tr><td style=\"font-size:14px;font-style:italic;padding-bottom:10px\">A visually appealing graphic showcasing n8n's key features and benefits.</td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#SmallBusinessAutomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>Entrepreneurship</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#Leadership</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>WorkflowInnovation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>WorkflowAutomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>TechSolutions</span></td></tr><tr><td style=\"font-size:14px;font-weight:bold\">What's your favorite automation tip? Share in the comments!</td></tr></tbody></table><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">Twitter</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">n8n: The best #WorkflowAutomation tool! Open-source, customizable, and powerful. Transform your business processes today!</td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#WorkflowTrends</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>AutomationTips</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#NoCodeSolutions</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\"><wbr>#workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>TechSolutions</span></td></tr></tbody></table><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">TikTok</td></tr><tr><td style=\"font-size:14px;font-style:italic;padding-bottom:10px\">Quick demo showcasing how n8n simplifies complex workflows with its intuitive interface.</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">n8n: Your go-to for effortless workflow automation! <img data-emoji=\"✨\" class=\"an1\" alt=\"✨\" aria-label=\"✨\" draggable=\"false\" src=\"https://fonts.gstatic.com/s/e/notoemoji/16.0/2728/32.png\" loading=\"lazy\"></td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8nTips</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#WorkflowAutomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\"><wbr>#TechSolutions</span></td></tr><tr><td style=\"font-size:14px;font-weight:bold\">Follow workflows.diy for more automation hacks!</td></tr></tbody></table><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">Threads</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">n8n is transforming the automation landscape. Its open-source nature and extensive integrations make it a top choice for businesses of all sizes. What are your thoughts on the future of workflow automation?</td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>WorkflowAutomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>TechSolutions</span></td></tr><tr><td style=\"font-size:14px;font-weight:bold\">Share your insights below!</td></tr></tbody></table><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f9f9f9;margin-bottom:20px;padding:20px;border-radius:8px\"><tbody><tr><td style=\"font-size:20px;font-weight:bold;padding-bottom:10px\">YouTube Shorts</td></tr><tr><td style=\"font-size:14px;font-style:italic;padding-bottom:10px\">Short tutorial demonstrating how to build a simple automation workflow in n8n.</td></tr><tr><td style=\"font-size:16px;padding-bottom:10px\">Learn why n8n is the top choice for workflow automation. Its open-source platform and powerful features make it a game-changer for businesses.</td></tr><tr><td style=\"padding-bottom:10px\"><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#n8n</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#automation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>workflowautomation</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#nocode</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>workflowsdiy</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#AIWorkflows</span><span style=\"display:inline-block;background:#f0f0f0;padding:2px 6px;margin:2px;border-radius:4px\">#<wbr>TechSolutions</span></td></tr><tr><td style=\"font-size:14px;font-weight:bold\">Subscribe for more workflow tips!</td></tr></tbody></table></td></tr></tbody></table><p></p>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n</table>\n",
+        "options": {}
+      },
+      "id": "9c666984-df24-4754-b80e-59bea384a894",
+      "name": "Prepare Content Review Email",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        2016,
+        2368
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "content": "# Master Prompt Genration\n\nAdjust the Social Media Content Factory prompts to suit your personal or business requirements.\n\n",
+        "height": 724,
+        "width": 480,
+        "color": 3
+      },
+      "id": "5147d39a-7e86-41f4-853b-d34e802d7687",
+      "name": "Sticky Note16",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1184,
+        -208
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        288,
+        160
+      ],
+      "id": "dc616cbe-7763-48ee-ac60-bf027af3c81e",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_HDGkIuhHt2m2ezR267GMAVXackSqbg10k1de",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n    \"aggressivePrune\": true,\n    \"blockMedia\": true,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"ignoreHttpsErrors\": false,\n    \"keepUrlFragments\": false,\n    \"maxCrawlDepth\": 10,\n    \"maxCrawlPages\": 10,\n    \"maxResults\": 10,\n    \"maxSessionRotations\": 10,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"respectRobotsTxtFile\": true,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://globalwellnessinstitute.org/global-wellness-institute-blog/2025/04/02/mental-wellness-initiative-trends-for-2025/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.abhasa.in/articles/mental-health-trends-2025/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.medparkhospital.com/en-US/lifestyles/10-health-trends-of-2025\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.echelon.health/five-preventive-health-trends-2025/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.dianova.org/news/mental-health-trends-2025-the-rise-of-early-intervention-and-youth-centered-care/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.who.int/news/item/02-09-2025-over-a-billion-people-living-with-mental-health-conditions-services-require-urgent-scale-up\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.capgemini.com/insights/expert-perspectives/trends-in-2025-for-healthcare/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.verywellmind.com/mind-reading-2025-trends-8762268\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://medicalrealities.com/mental-health-trends-in-2025-addressing-the-global-crisis/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.deloitte.com/us/en/insights/industry/health-care/life-sciences-and-health-care-industry-outlooks/2025-global-health-care-executive-outlook.html\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://nielseniq.com/global/en/insights/analysis/2025/mental-health-wellness-in-2025/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://meetglimpse.com/trends/mental-health-trends/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.sermo.com/resources/healthcare-trends/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.who.int/news/item/25-03-2025-new-who-guidance-calls-for-urgent-transformation-of-mental-health-policies\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.mckinsey.com/mhi/our-insights/the-path-toward-a-metabolic-health-revolution\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.frieslandcampinaingredients.com/insight/wellness-rebooted-experts-discuss-the-5-nutrition-trends-set-to-shape-2025/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://globalwellnessinstitute.org/global-wellness-institute-blog/2025/04/02/nutrition-for-healthspan-initiative-trends-for-2025/\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://www.prnewswire.com/news-releases/global-wellness-summit-releases-10-wellness-trends-for-2025-302361531.html\",\n            \"method\": \"GET\"\n        },\n        {\n            \"url\": \"https://meetglimpse.com/trends/fitness-trends/\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        608,
+        192
+      ],
+      "id": "a99b8a9f-dd99-4b28-845d-df791edf6400",
+      "name": "HTTP Request",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2096,
+        2112
+      ],
+      "id": "841c4f20-413c-4e0e-b34f-78a9a51f8ff5",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "k20iSdvXoIoTBm0l",
+          "name": "OpenAi account 6"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1536,
+        128
+      ],
+      "id": "9bdc28fa-6882-4ec8-bcc0-8d54e2258e15",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        1616
+      ],
+      "id": "a937f6a3-a930-4159-962a-3dc6fb56130d",
+      "name": "OpenAI Chat Model4",
+      "credentials": {
+        "openAiApi": {
+          "id": "k20iSdvXoIoTBm0l",
+          "name": "OpenAi account 6"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "lavish@wellm.co",
+        "subject": "=FOR APPROVAL",
+        "message": "={{ $json.subject }}{{ $json.htmlBody }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeUnit": "minutes"
+            }
+          },
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2304,
+        -176
+      ],
+      "id": "ba57261d-ff9d-4cab-babb-437e31acca0c",
+      "name": "Send message and wait for response",
+      "webhookId": "dbd3daef-a69f-4732-85e6-639f7889dc7e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "FtX6rezU8m3wqtX4",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a content creation AI for www.wellm.co, a leading creator of **wellm**, writing on behalf of a wellness persona specializing in selfcare, mental wellbeing, emotional wellbeing, indiviual and organization productivity emerging with mental clarity, leadership in healthy lifestyle, yoga, meditation and mindfullness. The content should focus on root cause of current health challenges, highilight the issue and offer solution emerging from the timetested natural laws of wellness- \nlike - Benifits coming from optimal use of air, water, nutrition, sunshine, rest/sleep, trust, discipline, excercise and healthy relationships.\"\n\n---\n\n🎯 Your goal is to craft engaging, platform-specific content for LinkedIn, Instagram, Facebook, Twitter (X), and YouTube Shorts & YouTube Long Video.  \nEach post must align with the platform’s audience preferences, tone, and style while reflecting workflows.diy's expertise in Preventive Health & Wellness.  \nThe content should focus on preventive health practices, natural remedies, and self-care routines that promote metabolic balance, holistic wellness, and long-term well-being.\n\n---\n\n### Persona Voice & Style\n- Focus on **preventive health practices** for metabolic health.  \n- Highlight **natural remedies** (nutrition, herbs, exercise, daily rituals).  \n- Tie every post to a **“law of wellness”** (e.g., consistency, balance, mindfulness).  \n- Tone: **warm, empathetic, evidence-based, motivational**.  \n- Keep content **relatable & practical** (actionable steps for daily life).  \n\n---\n\n### Key Objectives\n- **Platform Optimization:** Tailor content format, tone, and hashtags to each platform’s style and algorithm.  \n- **SEO/GEO/AEO:** Use a mix of general preventive health & wellness hashtags with trending platform-specific ones.  \n- **Engagement Focus:** Encourage interaction with wellness tips, stress relief, nutrition, and lifestyle guidance.  \n- **Consistency:** Balance professionalism with empathy across platforms.  \n- **Data-Driven Strategy:** Reflect trends in preventive health & wellness.  \n\n---\n\n### General Hashtags\n#PreventiveHealth #WellnessJourney #HealthyLiving #SelfCare #MindBodyBalance #HealthTips #HolisticHealth #Workflowsdiy  \n\n---\n\n### Platform-Specific Guidelines\n\n**1. LinkedIn**  \n- Style: Professional, insightful, educational.  \n- Focus: Preventive care strategies for professionals (stress, metabolic wellness at work).  \n- Length: 3–4 sentences.  \n- Hashtags: #WorkplaceWellness #HealthAtWork #Productivity #PreventiveCare #Leadership  \n- CTA: “How do you prioritize preventive health at work? Share your strategies in the comments or reach out to us for more tips.”  \n\n**2. Instagram**  \n- Style: Visual storytelling with creative captions.  \n- Focus: Natural remedies, holistic lifestyle, self-care rituals.  \n- 2–3 sentences, use emojis 🌿💪.  \n- Hashtags: #NaturalWellness #HealthyLiving #MindfulnessMatters #PreventiveHealth #SelfCareSunday  \n- CTA: “Tag someone who needs to prioritize their wellness routine! Visit the link in bio for more inspiration.”  \n\n**3. Facebook**  \n- Style: Friendly & community-focused.  \n- Focus: Daily wellness habits & natural preventive tips.  \n- 2–3 sentences.  \n- Hashtags: #HealthForAll #WellnessCommunity #PreventiveCare #HealthyHabits  \n- CTA: “What preventive health practices do you follow daily? Comment below!”  \n\n**4. Twitter (X)**  \nReturn JSON with:  \n- `video_suggestion`  \n- `image_suggestion`  \n- `post` (≤280 chars, concise natural wellness tip)  \n- `hashtags` (array)  \n- `character_limit: 280`  \n\n**5. YouTube Shorts**  \n- Style: 45–60s actionable natural wellness hack.  \n- Tone: Inspiring but evidence-based.  \n- Hashtags: #WellnessTips #HealthyHabits #NaturalRemedies  \n- CTA: “Subscribe for more daily wellness hacks 🌱”  \n\n**6. YouTube Long**  \n- Style: 3–5 min explainer / talk.  \n- Structure: Intro → 3–4 points → Conclusion with a “law of wellness.”  \n- Tone: Deep but approachable.  \n- Hashtags: #PreventiveHealth #NaturalHealing #WellnessJourney  \n\n---\n\n### Input Field (from Content Factory)\nMASTER_DRAFT:  \n{{ $('Social Media Content Factory').item.json.output }}\n\n\n---\n\n\nCRITICAL INSTRUCTIONS:\n1. Respond with ONLY valid JSON - no explanations, no markdown\n2. Do NOT use ```json or ``` markers\n3. Do NOT include any text before or after the JSON\n4. The JSON must start with { and end with }\n5. Generate content for ALL platforms: LinkedIn, Instagram, Facebook, Twitter, and YouTube_Shorts\n6. Each platform must have ALL required fields\n\nOutput this exact JSON structure:\n{\n  \"name\": \"[Content title here]\",\n  \"description\": \"[Detailed description here]\",\n  \"platform_posts\": {\n    \"LinkedIn\": {\n      \"image_suggestion\": \"[Professional image description]\",\n      \"post\": \"[LinkedIn post content]\",\n      \"hashtags\": [\"hashtag1\", \"hashtag2\", \"hashtag3\"],\n      \"call_to_action\": \"[CTA text]\"\n    },\n    \"Instagram\": {\n      \"image_suggestion\": \"[Visual image description]\",\n      \"caption\": \"[Instagram caption]\",\n      \"hashtags\": [\"hashtag1\", \"hashtag2\"],\n      \"emojis\": [\"😊\", \"💪\", \"✨\"],\n      \"call_to_action\": \"[CTA text]\"\n    },\n    \"Facebook\": {\n      \"post\": \"[Facebook post content]\",\n      \"hashtags\": [\"hashtag1\", \"hashtag2\"],\n      \"call_to_action\": \"[CTA text]\",\n      \"image_suggestion\": \"[Image description]\"\n    },\n    \"Twitter\": {\n      \"video_suggestion\": \"[Short video description]\",\n      \"image_suggestion\": \"[Image description]\",\n      \"post\": \"[Tweet content under 280 chars]\",\n      \"hashtags\": [\"hashtag1\", \"hashtag2\"],\n      \"character_limit\": 280\n    },\n    \"YouTube_Shorts\": {\n      \"video_suggestion\": \"[60-second video script]\",\n      \"title\": \"[Video title]\",\n      \"description\": \"[Video description]\",\n      \"hashtags\": [\"hashtag1\", \"hashtag2\"],\n      \"call_to_action\": \"[CTA text]\"\n    }\n  },\n  \"additional_notes\": \"[Any additional notes]\"\n}\n\nSTART YOUR RESPONSE WITH { AND END WITH }\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1840,
+        -176
+      ],
+      "id": "0528bcdd-f014-447d-8c7f-46602f7073b0",
+      "name": "RS content"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a content creation AI for www.wellm.co, writing on behalf of a wellness persona specializing in Mental Well-Being, Nutrition, and Fitness, .\n\n🎯 Goal: Transform the MASTER_DRAFT into engaging, platform-specific content for LinkedIn, Instagram, Facebook, Twitter (X), YouTube Shorts, and YouTube Long Video. Each output must reflect this persona’s expertise and voice.\n\n---\n\n### Persona Voice & Style\n- Focus on **mental health awareness, nutrition, and fitness routines**.\n- Blend **scientific evidence** with **motivational coaching**.\n- Tone: **uplifting, supportive, and action-oriented**.\n- Provide **practical steps**: workout tips, balanced meal ideas, stress-relief strategies.\n- End content with a **motivational wellness mantra** (e.g., “Strong body, calm mind.”).\n\n---\n\n### General Guidelines\n- Optimize for each platform’s tone, style, and algorithm (see platform guidelines below).\n- Use SEO, GEO, and AEO strategies.\n- Always encourage engagement (comments, shares, saves).\n- Hashtags: mix of fitness, nutrition, mental health, and platform-specific tags.\n\n---\n\n### Platform-Specific Guidelines\n\n**1. LinkedIn**\n- Style: Professional & educational.\n- Focus: Mental well-being and productivity, workplace fitness/nutrition hacks.\n- 3–4 sentences.\n- Hashtags: #WorkplaceWellness #MentalHealthAtWork #FitnessLeadership #NutritionMatters\n- CTA: “How do you support mental fitness in your workplace? Share below.”\n\n**2. Instagram**\n- Style: Visual storytelling.\n- Focus: Daily workout clips, meal prep, mindfulness practices.\n- 2–3 sentences, use emojis.\n- Hashtags: #MindfulLiving #FitnessJourney #HealthyEats #SelfCareSunday #MentalWellness\n- CTA: “Tag your workout buddy 💪🥗”\n\n**3. Facebook**\n- Style: Friendly, community-oriented.\n- Focus: Share personal wellness journeys (mental health + fitness + nutrition).\n- 2–3 sentences.\n- Hashtags: #WellnessCommunity #HealthyHabits #MentalFitness #NutritionTips\n- CTA: “What daily habit keeps your body strong and mind calm? Comment below!”\n\n**4. Twitter (X)**\n- Style: Short, powerful motivational tips on nutrition, exercise, and mental health.\n- Return JSON with: video_suggestion, image_suggestion, post (≤280 chars), hashtags array, character_limit: 280.\n\n**5. YouTube Shorts**\n- Style: 45–60s actionable wellness hack (quick workout, snack idea, mindfulness exercise).\n- Tone: Energetic & supportive.\n- Hashtags: #WellnessTips #FitnessMotivation #HealthyHabits\n- CTA: “Subscribe for more daily wellness hacks 🧘‍♂️💪”\n\n**6. YouTube Long**\n- Style: 3–5 min structured explainer/tutorial.\n- Focus: Nutrition guides, mental health routines, fitness programs.\n- Structure: Intro → 3–4 tips → Conclusion with motivational mantra.\n- Hashtags: #FitnessJourney #MentalHealthAwareness #NutritionForLife\n\n---\n\n### Input Fields\n- Topic/About the Post: {{ $json.output.name }}\n- Link: \n- MASTER_DRAFT: {{ $json.output.platform_posts }}\n\n---\n\n### Output Schema (return JSON only)\n\n{\n  \"LinkedIn\": {\n    \"post\": \"string\",\n    \"hashtags\": [\"string\"],\n    \"call_to_action\": \"string\"\n  },\n  \"Instagram\": {\n    \"caption\": \"string\",\n    \"hashtags\": [\"string\"],\n    \"call_to_action\": \"string\",\n    \"image_suggestion\": \"string\"\n  },\n  \"Facebook\": {\n    \"post\": \"string\",\n    \"hashtags\": [\"string\"],\n    \"call_to_action\": \"string\"\n  },\n  \"X-Twitter\": {\n    \"video_suggestion\": \"string\",\n    \"image_suggestion\": \"string\",\n    \"post\": \"string\",\n    \"hashtags\": [\"string\"],\n    \"character_limit\": 280\n  },\n  \"YouTubeShorts\": {\n    \"script\": \"string\",\n    \"hashtags\": [\"string\"],\n    \"call_to_action\": \"string\"\n  },\n  \"YouTubeLong\": {\n    \"outline\": [\"string\"],\n    \"hashtags\": [\"string\"],\n    \"call_to_action\": \"string\"\n  }\n}\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1728,
+        2320
+      ],
+      "id": "29cde371-8da1-449c-b33d-65c62e183000",
+      "name": "shivi content"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1024,
+        224
+      ],
+      "id": "eea5a24a-68c4-4201-ae68-840537244fae",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "14NB5YdWSDt__Hlex2b_p8YAzJuA8AvWjJP85BiRtFRk",
+          "mode": "list",
+          "cachedResultName": "wellm automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/14NB5YdWSDt__Hlex2b_p8YAzJuA8AvWjJP85BiRtFRk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/14NB5YdWSDt__Hlex2b_p8YAzJuA8AvWjJP85BiRtFRk/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Link": "={{ $json.url }}",
+            "Topic": "={{ $json.metadata.title }}{{ $json.metadata.openGraph[3].content }}"
+          },
+          "matchingColumns": [
+            "Link"
+          ],
+          "schema": [
+            {
+              "id": "Topic",
+              "displayName": "Topic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Link",
+              "displayName": "Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        832,
+        208
+      ],
+      "id": "4f94b435-acce-4ef9-a80f-5aef4324904b",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "z5k9yZEXpsMCQLh8",
+          "name": "Google Sheets account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "   {\n     \"name\": \"Test\",\n     \"description\": \"Test description\",\n     \"platform_posts\": {\n       \"LinkedIn\": {\n         \"post\": \"Test post\"\n       }\n     }\n   }\n\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1984,
+        16
+      ],
+      "id": "66bb6609-8b1b-42e6-a66b-f5445f535f69",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "\n   {\n     \"name\": \"Test\",\n     \"description\": \"Test description\",\n     \"platform_posts\": {\n       \"LinkedIn\": {\n         \"post\": \"Test post\"\n       }\n     }\n   }\n   \n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1952,
+        2368
+      ],
+      "id": "91b20e1b-ee12-4786-aa0e-b06c7612caa9",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format Approval Email — parses persona JSON from `output` (string or object) and renders full content.\n\n// ---- helpers ----\nfunction stripFences(s) {\n  if (typeof s !== 'string') return s;\n  return s.replace(/^```json\\s*/i, '').replace(/^```\\s*/i, '').replace(/\\s*```$/i, '');\n}\nfunction safeParse(s) { try { return JSON.parse(s); } catch { return null; } }\nfunction get(obj, path, fallback) {\n  const parts = path.split('.');\n  let cur = obj;\n  for (const k of parts) {\n    if (cur && Object.prototype.hasOwnProperty.call(cur, k)) cur = cur[k]; else return fallback;\n  }\n  return (cur === undefined || cur === null) ? fallback : cur;\n}\nconst joinTags = a => {\n  if (!Array.isArray(a)) return '';\n  return a.map(tag => {\n    // Add # if not already present\n    const trimmed = tag.trim();\n    return trimmed.startsWith('#') ? trimmed : '#' + trimmed;\n  }).join(' ');\n};\nconst li = s => '<li>' + s + '</li>';\n\n// ---- 1) normalize input (handle `output` as string/object) ----\nconst inJson = (items[0] && items[0].json) ? items[0].json : {};\nlet data = inJson;\n\n// If persona JSON is under `output` as a string with code fences\nif (!inJson.platform_posts && typeof inJson.output === 'string') {\n  const parsed = safeParse(stripFences(inJson.output));\n  if (parsed && parsed.platform_posts) data = parsed;\n}\n// If persona JSON is under `output` as an object\nif (!data.platform_posts && inJson.output && typeof inJson.output === 'object') data = inJson.output;\n\nconst posts = data.platform_posts || {};\nconst personaName = get(data, 'persona', 'Persona');\nconst topicName   = get(data, 'name', 'Content Pack');\nconst description = get(data, 'description', '');\n\n// Handle naming variants\nconst twitterKey = posts['X-Twitter'] ? 'X-Twitter' : (posts['Twitter'] ? 'Twitter' : null);\nconst shortsKey  = posts['YouTubeShorts'] ? 'YouTubeShorts' : (posts['YouTube_Shorts'] ? 'YouTube_Shorts' : null);\n\n// ---- 2) build HTML with real content ----\nconst html = [];\nhtml.push('<div style=\"font-family:Inter,Arial,sans-serif;line-height:1.5;color:#111;\">');\nhtml.push('<h2 style=\"margin:0 0 6px;\">Approval Needed: ' + topicName + '</h2>');\nhtml.push('<p style=\"margin:0 0 12px;\"><b>Persona:</b> ' + personaName + '</p>');\nif (description) html.push('<p style=\"margin:0 0 16px;\">' + description + '</p>');\nhtml.push('<hr style=\"border:none;border-top:1px solid #eee;margin:16px 0;\"/>');\n\nfunction block(title, arr) {\n  html.push('<h3 style=\"margin:12px 0 6px;\">' + title + '</h3>');\n  if (!arr.length) html.push('<p style=\"color:#666;\">(no content)</p>'); else html.push(...arr);\n  html.push('<hr style=\"border:none;border-top:1px solid #eee;margin:16px 0;\"/>');\n}\n\n// LinkedIn\nif (posts.LinkedIn) {\n  const p = posts.LinkedIn, b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.post)             b.push('<p><b>Post:</b> ' + p.post + '</p>');\n  if (p.call_to_action)   b.push('<p><b>call_to_action:</b><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('LinkedIn', b);\n}\n\n// Facebook\nif (posts.Facebook) {\n  const p = posts.Facebook, b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.post)             b.push('<p><b>Post:</b> ' + p.post + '</p>');\n  if (p.call_to_action)   b.push('<p><b>call_to_action:</b><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('Facebook', b);\n}\n\n// X / Twitter\nif (twitterKey && posts[twitterKey]) {\n  const p = posts[twitterKey], b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.post)             b.push('<p>' + p.post + '</p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  if (p.character_limit)  b.push('<p><small>Char limit: ' + p.character_limit + '</small></p>');\n  block('Twitter (X)', b);\n}\n\n// ---- 3) Professional editing instructions ----\nhtml.push('<div style=\"margin:15px 0; padding:12px; background:#f0f9ff; border:1px solid #3b82f6; border-radius:6px;\">' +\n  '<h4 style=\"margin:0 0 8px; color:#1e40af;\">To Edit Content:</h4>' +\n  '<p style=\"margin:0 0 6px; color:#374151; font-size:13px;\">Reply using this format:</p>' +\n  '<div style=\"background:#f1f5f9; padding:8px; border-radius:4px; font-family:monospace; font-size:12px; color:#334155;\">' +\n  '<strong>LinkedIn</strong><br>' +\n  'Image: Your image description<br>' +\n  'Post: Your post content<br>' +\n  'Call to Action: Your CTA<br>' +\n  'Tags: #YourHashtags<br><br>' +\n  '<strong>Facebook</strong><br>' +\n  'Image: Your image description<br>' +\n  'Post: Your post content<br>' +\n  'Call to Action: Your CTA<br>' +\n  'Tags: #YourHashtags<br><br>' +\n  '<strong>Twitter</strong><br>' +\n  'Image: Your image description<br>' +\n  'Post: Your tweet content<br>' +\n  'Tags: #YourHashtags' +\n  '</div>' +\n  '<p style=\"margin:6px 0 0; color:#6b7280; font-size:11px;\">Only include platforms you want to change.</p>' +\n  '</div>');\n\nhtml.push('<p style=\"color:#6b7280;margin-top:14px;\">Automated with n8n</p>');\nhtml.push('</div>');\n\nreturn [{\n  json: {\n    subject: 'Approval Needed: ' + topicName,\n    htmlBody: html.join('\\n'),\n    persona: personaName,\n    topic: topicName,\n    approverEmail: get(data, 'approverEmail', 'approver@example.com'),\n    contentData: data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        -176
+      ],
+      "id": "dbaf4dbd-b679-4b6b-ac71-437644682cc0",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"type\": \"string\"\n    },\n    \"description\": {\n      \"type\": \"string\"\n    },\n    \"platform_posts\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"LinkedIn\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"image_suggestion\": { \"type\": \"string\" },\n            \"post\": { \"type\": \"string\" },\n            \"hashtags\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n            \"call_to_action\": { \"type\": \"string\" }\n          }\n        },\n        \"Instagram\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"image_suggestion\": { \"type\": \"string\" },\n            \"caption\": { \"type\": \"string\" },\n            \"hashtags\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n            \"emojis\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n            \"call_to_action\": { \"type\": \"string\" }\n          }\n        },\n        \"Facebook\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"post\": { \"type\": \"string\" },\n            \"hashtags\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n            \"call_to_action\": { \"type\": \"string\" },\n            \"image_suggestion\": { \"type\": \"string\" }\n          }\n        },\n        \"Twitter\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"video_suggestion\": { \"type\": \"string\" },\n            \"image_suggestion\": { \"type\": \"string\" },\n            \"post\": { \"type\": \"string\" },\n            \"hashtags\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n            \"character_limit\": { \"type\": \"integer\" }\n          }\n        },\n        \"YouTube_Shorts\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"video_suggestion\": { \"type\": \"string\" },\n            \"title\": { \"type\": \"string\" },\n            \"description\": { \"type\": \"string\" },\n            \"hashtags\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n            \"call_to_action\": { \"type\": \"string\" }\n          }\n        }\n      },\n      \"additionalProperties\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"image_suggestion\": { \"type\": \"string\" },\n          \"post\": { \"type\": \"string\" },\n          \"hashtags\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n          \"call_to_action\": { \"type\": \"string\" }\n        }\n      }\n    }\n  }\n}\n\n\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        3536,
+        416
+      ],
+      "id": "912e013e-54da-4068-8fe5-d76e08078056",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "jsCode": "/**\n * Enhanced data processor with fixed RS Content extraction\n * Place this after your Wait (On Form Submitted) node\n */\n\n// Helper: Case-insensitive getter\nfunction ci(obj, key) {\n  const k = Object.keys(obj).find(k => k.toLowerCase() === key.toLowerCase());\n  return k ? obj[k] : undefined;\n}\n\n// Platform alias map\nconst aliases = {\n  facebook: [\"facebook\",\"fb\"],\n  instagram: [\"instagram\",\"ig\",\"insta\"],\n  linkedin: [\"linkedin\",\"linkedIn\",\"linkdin\",\"linkdIn\",\"linkdn\",\"linkdln\",\"li\"],\n  twitter: [\"twitter\",\"x\",\"x (twitter)\"]\n};\n\n// Convert platform name to canonical form\nfunction toCanonical(p) {\n  const s = String(p||\"\").trim().toLowerCase();\n  for (const [can, list] of Object.entries(aliases)) {\n    if (list.map(v=>v.toLowerCase()).includes(s)) return can;\n  }\n  return null;\n}\n\n// Extract text from any object/string\nfunction extractText(data, fallback = '') {\n  if (!data) return fallback;\n  if (typeof data === 'string') return data;\n  if (typeof data === 'object') {\n    // Try common property names\n    return data.text || \n           data.content || \n           data.output || \n           data.result ||\n           data.message ||\n           data.response ||\n           JSON.stringify(data, null, 2);\n  }\n  return String(data);\n}\n\n// 1) Get form data\nconst f = $json;\n\n// 2) Normalize selected platforms\nlet selected = f.platforms_to_change || [];\nif (typeof selected === \"string\") selected = selected.split(\",\").map(s=>s.trim());\nselected = Array.from(new Set(selected.map(toCanonical).filter(Boolean)));\nif (!selected.length) throw new Error(\"Select at least one platform.\");\n\n// 3) Extract prompts from form\nconst globalPrompt = (ci(f,\"global_prompt\") || \"\").trim();\nconst masterPromptFromForm = (ci(f,\"master_prompt\") || \"\").trim();\n\n// 4) Fetch master constraints from Social Media Content Factory node\nlet masterConstraints = masterPromptFromForm;\ntry {\n  const socialMediaFactory = $('Social Media Content Factory').first();\n  if (socialMediaFactory?.json?.output) {\n    const extracted = extractText(socialMediaFactory.json.output);\n    if (!masterConstraints && extracted) {\n      masterConstraints = extracted;\n    }\n  }\n} catch (e) {\n  console.log(\"Could not fetch from Social Media Content Factory:\", e.message);\n}\n\n// 5) FIXED: Fetch original content from RS Content node\nlet rsContentData = {};\ntry {\n  // Get the RS Content node - try different access methods\n  const rsContentNode = $('RS content').first() || \n                        $('RS Content').first() || \n                        $('RS_content').first();\n  \n  console.log(\"RS Content node check:\", {\n    exists: !!rsContentNode,\n    hasJson: !!rsContentNode?.json,\n    keys: rsContentNode?.json ? Object.keys(rsContentNode.json) : []\n  });\n  \n  if (rsContentNode?.json) {\n    // Check if output exists and what type it is\n    const output = rsContentNode.json.output;\n    console.log(\"RS Content output type:\", typeof output);\n    \n    if (output) {\n      // If output is a string, use it directly\n      if (typeof output === 'string') {\n        for (const p of selected) {\n          rsContentData[p] = output;\n        }\n      }\n      // If output is an object with platform keys\n      else if (typeof output === 'object') {\n        // Check if it has platform-specific content\n        for (const p of selected) {\n          if (output[p]) {\n            rsContentData[p] = extractText(output[p]);\n          } else {\n            // If no platform-specific, use the whole output\n            rsContentData[p] = extractText(output);\n          }\n        }\n      }\n    }\n    \n    // Also check for content at the root level\n    if (!Object.keys(rsContentData).length) {\n      // Try other common fields\n      const content = rsContentNode.json.content || \n                     rsContentNode.json.text || \n                     rsContentNode.json.result ||\n                     rsContentNode.json.response;\n      \n      if (content) {\n        const extracted = extractText(content);\n        for (const p of selected) {\n          rsContentData[p] = extracted;\n        }\n      }\n    }\n    \n    // Last resort - check if the platforms are directly in json\n    for (const p of selected) {\n      if (!rsContentData[p] && rsContentNode.json[p]) {\n        rsContentData[p] = extractText(rsContentNode.json[p]);\n      }\n    }\n  }\n  \n  console.log(\"Extracted RS Content:\", rsContentData);\n  \n} catch (e) {\n  console.log(\"Error fetching RS Content:\", e.message);\n}\n\n// 6) Get original content from form or RS Content\nconst originals = (f.original_content && typeof f.original_content === \"object\") ? f.original_content : {};\n\n// 7) Request ID\nconst reqId = ci(f,\"content_id\") || ci(f,\"request_id\") || String(Date.now());\n\n// Helper: Get platform-specific prompt\nfunction getSpecificPrompt(p) {\n  const variants = {\n    facebook: [\"facebook_prompt\"],\n    instagram: [\"instagram_prompt\",\"Instagram_prompt\"],\n    linkedin: [\"linkedin_prompt\",\"LinkedIn_prompt\",\"linkdin_prompt\",\"linkdIn_prompt\",\"linkdn_prompt\",\"linkdln_prompt\"],\n    twitter: [\"twitter_prompt\",\"x_prompt\"]\n  }[p] || [];\n  \n  for (const k of variants) {\n    const v = ci(f, k);\n    if (v && String(v).trim()) return String(v).trim();\n  }\n  return \"\";\n}\n\n// Helper: Get original content for platform\nfunction getOriginalContent(platform) {\n  // Priority: 1) RS Content, 2) Form originals, 3) Form platform-specific\n  const rsContent = rsContentData[platform] || \"\";\n  const formOriginal = (typeof originals[platform] === \"string\" ? originals[platform] : \"\");\n  const formPlatformSpecific = ci(f,`original_${platform}`) || \"\";\n  \n  const result = rsContent || formOriginal || formPlatformSpecific;\n  \n  console.log(`Original content for ${platform}:`, {\n    fromRS: !!rsContent,\n    fromFormOriginal: !!formOriginal,\n    fromFormSpecific: !!formPlatformSpecific,\n    final: result.substring(0, 50) + \"...\"\n  });\n  \n  return result;\n}\n\n// 8) Validate that each platform has a prompt\nconst missing = [];\nfor (const p of selected) {\n  const specific = getSpecificPrompt(p);\n  if (!specific && !globalPrompt) missing.push(p);\n}\nif (missing.length) {\n  throw new Error(`Provide a prompt for: ${missing.join(\", \")} (or fill global_prompt).`);\n}\n\n// 9) Output one item per platform\nconst order = [\"facebook\",\"instagram\",\"linkedin\",\"twitter\"];\nconst out = [];\n\nfor (const p of order) {\n  if (!selected.includes(p)) continue;\n  \n  const specific = getSpecificPrompt(p);\n  const finalPrompt = specific || globalPrompt;\n  const originalContent = getOriginalContent(p);\n  \n  out.push({ json: {\n    schema_version: 1,\n    request_id: reqId,\n    platform: p,\n    prompt: finalPrompt,\n    master_prompt: masterConstraints,\n    original_content: originalContent,\n    \n    // Pre-formatted prompt for AI node\n    formatted_prompt: `Platform: ${p}\n\nMaster constraints:\n${masterConstraints}\n\nOriginal post:\n${originalContent}\n\nChange request (from approver):\n\"${finalPrompt}\"\n\nRewrite ONLY the ${p} post text that satisfies the change request AND the master constraints.\nReturn the final post text only.`,\n    \n    // Metadata\n    meta: {\n      selected_platforms: selected,\n      specific_prompt: specific || null,\n      global_prompt: globalPrompt || null,\n      has_master_constraints: !!masterConstraints,\n      has_original_content: !!originalContent,\n      original_content_length: originalContent.length\n    }\n  }});\n}\n\n// Final debug log\nconsole.log(`✅ Processing ${out.length} platforms:`, out.map(item => ({\n  platform: item.json.platform,\n  has_prompt: !!item.json.prompt,\n  has_master: !!item.json.master_prompt,\n  has_original: !!item.json.original_content,\n  original_length: item.json.original_content.length\n})));\n\nreturn out;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3632,
+        16
+      ],
+      "id": "81e56f01-4ac0-45b1-993e-333898501233",
+      "name": "Code5"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "lavish@wellm.co",
+        "subject": "=🔥FOR Reapproval 🔥",
+        "message": "={{ $json.subject }}{{ $json.htmlBody }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "resumeAmount": 45,
+              "resumeUnit": "minutes"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3824,
+        608
+      ],
+      "id": "5fe377a2-6971-42e2-a4ef-e01192efd31b",
+      "name": "Send message and wait for response1",
+      "webhookId": "dbd3daef-a69f-4732-85e6-639f7889dc7e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "FtX6rezU8m3wqtX4",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format Approval Email — parses persona JSON from `output` (string or object) and renders full content.\n\n// ---- helpers ----\nfunction stripFences(s) {\n  if (typeof s !== 'string') return s;\n  return s.replace(/^```json\\s*/i, '').replace(/^```\\s*/i, '').replace(/\\s*```$/i, '');\n}\nfunction safeParse(s) { try { return JSON.parse(s); } catch { return null; } }\nfunction get(obj, path, fallback) {\n  const parts = path.split('.');\n  let cur = obj;\n  for (const k of parts) {\n    if (cur && Object.prototype.hasOwnProperty.call(cur, k)) cur = cur[k]; else return fallback;\n  }\n  return (cur === undefined || cur === null) ? fallback : cur;\n}\nconst joinTags = a => Array.isArray(a) ? a.join(' ') : '';\nconst li = s => '<li>' + s + '</li>';\n\n// ---- 1) normalize input (handle `output` as string/object) ----\nconst inJson = (items[0] && items[0].json) ? items[0].json : {};\nlet data = inJson;\n\n// If persona JSON is under `output` as a string with code fences\nif (!inJson.platform_posts && typeof inJson.output === 'string') {\n  const parsed = safeParse(stripFences(inJson.output));\n  if (parsed && parsed.platform_posts) data = parsed;\n}\n// If persona JSON is under `output` as an object\nif (!data.platform_posts && inJson.output && typeof inJson.output === 'object') data = inJson.output;\n\nconst posts = data.platform_posts || {};\nconst personaName = get(data, 'persona', 'Persona');\nconst topicName   = get(data, 'name', 'Content Pack');\nconst description = get(data, 'description', '');\n\n// Handle naming variants\nconst twitterKey = posts['X-Twitter'] ? 'X-Twitter' : (posts['Twitter'] ? 'Twitter' : null);\nconst shortsKey  = posts['YouTubeShorts'] ? 'YouTubeShorts' : (posts['YouTube_Shorts'] ? 'YouTube_Shorts' : null);\n\n// ---- 2) build HTML with real content ----\nconst html = [];\nhtml.push('<div style=\"font-family:Inter,Arial,sans-serif;line-height:1.5;color:#111;\">');\nhtml.push('<h2 style=\"margin:0 0 6px;\">Approval Needed: ' + topicName + '</h2>');\nhtml.push('<p style=\"margin:0 0 12px;\"><b>Persona:</b> ' + personaName + '</p>');\nif (description) html.push('<p style=\"margin:0 0 16px;\">' + description + '</p>');\nhtml.push('<hr style=\"border:none;border-top:1px solid #eee;margin:16px 0;\"/>');\n\nfunction block(title, arr) {\n  html.push('<h3 style=\"margin:12px 0 6px;\">' + title + '</h3>');\n  if (!arr.length) html.push('<p style=\"color:#666;\">(no content)</p>'); else html.push(...arr);\n  html.push('<hr style=\"border:none;border-top:1px solid #eee;margin:16px 0;\"/>');\n}\n\n// LinkedIn\nif (posts.LinkedIn) {\n  const p = posts.LinkedIn, b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.post)             b.push('<p>' + p.post + '</p>');\n  if (p.call_to_action)   b.push('<p><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('LinkedIn', b);\n}\n\n// Instagram\nif (posts.Instagram) {\n  const p = posts.Instagram, b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.caption)          b.push('<p>' + p.caption + '</p>');\n  if (Array.isArray(p.emojis) && p.emojis.length) b.push('<p>' + p.emojis.join(' ') + '</p>');\n  if (p.call_to_action)   b.push('<p><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('Instagram', b);\n}\n\n// Facebook\nif (posts.Facebook) {\n  const p = posts.Facebook, b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.post)             b.push('<p>' + p.post + '</p>');\n  if (p.call_to_action)   b.push('<p><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('Facebook', b);\n}\n\n// X / Twitter\nif (twitterKey && posts[twitterKey]) {\n  const p = posts[twitterKey], b = [];\n  if (p.image_suggestion) b.push('<p><b>Image:</b> ' + p.image_suggestion + '</p>');\n  if (p.video_suggestion) b.push('<p><b>Video:</b> ' + p.video_suggestion + '</p>');\n  if (p.post)             b.push('<p>' + p.post + '</p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  if (p.character_limit)  b.push('<p><small>Char limit: ' + p.character_limit + '</small></p>');\n  block('Twitter (X)', b);\n}\n\n// YouTube Shorts\nif (shortsKey && posts[shortsKey]) {\n  const p = posts[shortsKey], b = [];\n  if (p.video_suggestion) b.push('<p><b>Video:</b> ' + p.video_suggestion + '</p>');\n  if (p.title)            b.push('<p><b>Title:</b> ' + p.title + '</p>');\n  if (p.description)      b.push('<p>' + p.description + '</p>');\n  if (p.call_to_action)   b.push('<p><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)         b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('YouTube Shorts', b);\n}\n\n// YouTube Long (if your schema outputs it)\nif (posts.YouTubeLong) {\n  const p = posts.YouTubeLong, b = [];\n  if (Array.isArray(p.outline) && p.outline.length) b.push('<ul>' + p.outline.map(li).join('') + '</ul>');\n  if (p.call_to_action) b.push('<p><i>' + p.call_to_action + '</i></p>');\n  if (p.hashtags)       b.push('<p><b>Tags:</b> ' + joinTags(p.hashtags) + '</p>');\n  block('YouTube Long', b);\n}\n\n// ---- 3) action buttons (update your domain) ----\nconst BASE = 'https://YOUR-N8N-DOMAIN/webhook';\nconst q = 'persona=' + encodeURIComponent(personaName) + '&topic=' + encodeURIComponent(topicName);\nconst approveUrl = BASE + '/approve?' + q;\nconst editUrl    = BASE + '/edit?'    + q;\nconst rejectUrl  = BASE + '/reject?'  + q;\n\nhtml.push('<div style=\"margin-top:20px;\">' +\n  '<a href=\"' + approveUrl + '\" style=\"background:#16a34a;color:#fff;text-decoration:none;padding:10px 14px;border-radius:8px;\">✅ Approve</a>' +\n  '<a href=\"' + editUrl    + '\" style=\"background:#3b82f6;color:#fff;text-decoration:none;padding:10px 14px;border-radius:8px;margin-left:8px;\">✏️ Edit</a>' +\n  '<a href=\"' + rejectUrl  + '\" style=\"background:#dc2626;color:#fff;text-decoration:none;padding:10px 14px;border-radius:8px;margin-left:8px;\">❌ Reject</a>' +\n  '</div>');\nhtml.push('<p style=\"color:#6b7280;margin-top:14px;\">Automated with n8n</p>');\nhtml.push('</div>');\n\nreturn [{\n  json: {\n    subject: 'Approval Needed: ' + topicName,\n    htmlBody: html.join('\\n'),\n    persona: personaName,\n    topic: topicName,\n    approverEmail: get(data, 'approverEmail', 'approver@example.com'),\n    approveUrl, editUrl, rejectUrl\n  }\n}];\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3824,
+        240
+      ],
+      "id": "b62557e8-a914-4bef-bab3-627080b0c971",
+      "name": "Code6"
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.finalPostText_Twitter }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [
+        5312,
+        -64
+      ],
+      "id": "06213896-681a-424c-8766-1d249d018b10",
+      "name": "Create Tweet",
+      "retryOnFail": true,
+      "credentials": {
+        "twitterOAuth2Api": {
+          "id": "lk5rGuBUqBa2gfsK",
+          "name": "X account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Persona 1",
+        "height": 416,
+        "width": 848
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1760,
+        -272
+      ],
+      "typeVersion": 1,
+      "id": "83388532-113e-410e-8e9d-43fdbd2b579f",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Persona 2",
+        "height": 416,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1552,
+        1664
+      ],
+      "typeVersion": 1,
+      "id": "ec3d934f-eeed-4356-8198-32edb27dccdf",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Regenration Phase",
+        "height": 880,
+        "width": 1184
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2736,
+        -64
+      ],
+      "typeVersion": 1,
+      "id": "b64c9b3d-a0f7-4e76-8f2f-ca8bb1c7be0b",
+      "name": "Sticky Note18"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1e3f770b-8c7c-4c38-8585-892193341d98",
+              "leftValue": "={{ $('Send message and wait for response1').item.json.data }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2864,
+        352
+      ],
+      "id": "eca200e6-fc2a-4aad-8d17-7c678e2a71dc",
+      "name": "If2",
+      "alwaysOutputData": false,
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1840,
+        16
+      ],
+      "id": "860520a6-0c85-469f-b2c9-250489714cae",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "cjs1B2cM04Fo13Zj",
+          "name": "OpenAi account 9"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3392,
+        416
+      ],
+      "id": "4100f0b1-0b77-4128-a41f-d8b3c3211118",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "cjs1B2cM04Fo13Zj",
+          "name": "OpenAi account 9"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const j = { ...$json };\n\n// This part CLEARS all the form fields - exactly what you want!\n[\n  'platforms_to_change','global_prompt',\n  'facebook_prompt','Instagram_prompt','instagram_prompt',\n  'twitter_prompt','LinkedIn','linkedin_prompt',\n  'submittedAt','formMode','form','formData','waitFormData'\n].forEach(k => { if (k in j) delete j[k]; });\n\nj.attempt = (j.attempt ?? 0) + 1;\nj.wait_resume_key = `${$execution.id}-${j.attempt}-${Date.now()}`;\nj.__form_seed = Math.floor(Math.random()*1e9);\nj.approved = false;\n\n// This PRESERVES the original content for merging later\nj.original_complete_content = $json.original_complete_content;\n\nreturn [{ json: j }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3248,
+        416
+      ],
+      "id": "8cb02bbc-7de9-4b47-8d02-bedbe55fc81f",
+      "name": "Reset form data"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.imagePrompt_LinkedIn }}",
+                    "rightValue": "={{ $('RS content').item.json.output.platform_posts.LinkedIn }}",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "3ce940fc-97bf-4151-b028-b7182b992453"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Linkedin"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f6eb6d67-6eac-4a47-8838-2bc9fdebb1d2",
+                    "leftValue": "={{ $('Code8').item.json.finalPostText_Twitter }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Twitter"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f0aeb5e8-3ff5-403d-a9f4-1f9ffb819932",
+                    "leftValue": "={{ $json.imagePrompt_Facebook }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "facebook"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c1e81bac-5b3f-4b33-9f16-729a7ff4a736",
+                    "leftValue": "={{ $('Code8').item.json.imagePrompt_Instagram }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Instagram"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "allMatchingOutputs": true
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4960,
+        -192
+      ],
+      "id": "fcf0df40-f255-428c-952a-6ce7c95458c7",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "model": "dall-e-2",
+        "prompt": "=Create a minimalist mental health awareness poster in English language. Use Vibrant colors.\n\nImage prompt: {{ $json.imagePrompt_LinkedIn }}\n\n\n\nText in English only:\n- Top: \"World Mental Health Day\" visible over the background.\n- Bottom: \"Your mind matters\" or \"Take care of your mental health\" in darker blue font\n\nDesign: Clean minimalist style, soft shadows, rounded shapes, calming color palette.\n\n\n\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        5280,
+        -240
+      ],
+      "id": "c3a33f90-7ff6-4c79-a686-c7d50234d144",
+      "name": "linkedin image",
+      "credentials": {
+        "openAiApi": {
+          "id": "k20iSdvXoIoTBm0l",
+          "name": "OpenAi account 6"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1232,
+        320
+      ],
+      "id": "f0a23e4f-eddc-4001-8b1d-c2ae61a49beb",
+      "name": "OpenAI Chat Model5",
+      "credentials": {
+        "openAiApi": {
+          "id": "cjs1B2cM04Fo13Zj",
+          "name": "OpenAi account 9"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Publishing content\n1 Image genration  \n2 Posting of different platforms",
+        "height": 976,
+        "width": 1872,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4064,
+        -480
+      ],
+      "typeVersion": 1,
+      "id": "6c601708-8d36-42a3-ae2e-4b5fcae2279e",
+      "name": "Sticky Note19"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        4352,
+        -160
+      ],
+      "id": "27c2a68f-e293-4e96-b2b7-4e370ebfc07e",
+      "name": "Merge4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "23656606-812b-410f-878d-8a87dbb95d4e",
+              "name": "imagePrompt_LinkedIn",
+              "value": "={{ $json.imagePrompt_LinkedIn }}",
+              "type": "string"
+            },
+            {
+              "id": "23d57f50-f809-4ab4-aa01-155bd32e86c9",
+              "name": "=finalPostText_LinkedIn",
+              "value": "={{ $json.finalPostText_LinkedIn }}",
+              "type": "string"
+            },
+            {
+              "id": "4934770e-cd51-4487-a1e5-ddbe90aae860",
+              "name": "finalPostText_Twitter",
+              "value": "={{ $json.finalPostText_Twitter }}",
+              "type": "string"
+            },
+            {
+              "id": "ebd8b789-139f-445e-a83e-6a08d449c99c",
+              "name": "imagePrompt_Facebook",
+              "value": "={{ $json.imagePrompt_Facebook }}",
+              "type": "string"
+            },
+            {
+              "id": "5718571f-abea-4df2-8a37-4b1342e6b6d4",
+              "name": "finalFacebookText_Text",
+              "value": "={{ $json.finalPostText_Facebook }}",
+              "type": "string"
+            },
+            {
+              "id": "bf20990f-702e-4957-8c32-fa988fd681e2",
+              "name": "imagePrompt_instagram",
+              "value": "={{ $json.imagePrompt_Instagram }}",
+              "type": "string"
+            },
+            {
+              "id": "707354bc-ab7d-45ec-831c-4cd0cbf0ce69",
+              "name": "finalInstagramText_Text",
+              "value": "={{ $json.finalPostText_Instagram }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "ignoreConversionErrors": true
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4736,
+        -160
+      ],
+      "id": "9afc85fa-b368-4593-be38-dfb6282201e5",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ====================================================================\n// MERGE & NORMALIZE PLATFORM POSTS - FINAL PRODUCTION VERSION\n// Handles: Approved, Regenerated (RS), and Edited Content Paths\n// Platforms: LinkedIn, Facebook, Twitter, Instagram\n// REMOVES ALL \\n characters - outputs completely flat text\n// ====================================================================\n\n// ========== COMPLETE NEWLINE REMOVAL ==========\nconst removeAllBackslashN = (text) => {\n  if (!text) return '';\n  let result = String(text);\n  let cleaned = '';\n  let i = 0;\n\n  while (i < result.length) {\n    if (result[i] === '\\\\' && i + 1 < result.length && (result[i + 1] === 'n' || result[i + 1] === 'N')) {\n      if (i + 2 < result.length && result[i + 2] === ' ') {\n        if (i + 4 < result.length && result[i + 3] === '\\\\' && result[i + 4] === 'n') {\n          cleaned += ' ';\n          i += 5;\n          continue;\n        }\n      }\n      cleaned += ' ';\n      i += 2;\n    }\n    else if (result[i] === '\\\\' && i + 1 < result.length && result[i + 1] === 'r') {\n      if (i + 3 < result.length && result[i + 2] === '\\\\' && result[i + 3] === 'n') {\n        cleaned += ' ';\n        i += 4;\n      } else {\n        cleaned += ' ';\n        i += 2;\n      }\n    }\n    else if (result[i] === '\\\\' && i + 1 < result.length && result[i + 1] === 't') {\n      cleaned += ' ';\n      i += 2;\n    }\n    else {\n      cleaned += result[i];\n      i++;\n    }\n  }\n\n  cleaned = cleaned.replace(/\\r\\n/g, ' ');\n  cleaned = cleaned.replace(/\\n/g, ' ');\n  cleaned = cleaned.replace(/\\r/g, ' ');\n  cleaned = cleaned.replace(/\\s{2,}/g, ' ');\n\n  return cleaned.trim();\n};\n\n// ========== UTILITIES - HASHTAG PROCESSING ==========\nconst ensureHash = (arr) =>\n  (arr || []).map((tag) => {\n    const value = String(tag || '').trim();\n    if (!value) return '';\n    return value.startsWith('#') ? value : `#${value}`;\n  }).filter(Boolean);\n\nconst parseHashtagsToArray = (tags) => {\n  if (!tags) return [];\n\n  if (Array.isArray(tags)) {\n    const flattened = tags.map((t) => {\n      if (t == null) return '';\n      if (typeof t === 'object') {\n        return t.hashtag || t.tag || t.value || t.text || '';\n      }\n      return String(t);\n    });\n    return ensureHash(flattened);\n  }\n\n  const parts = String(tags)\n    .split(/[\\s,]+/)\n    .map(s => s.trim())\n    .filter(Boolean);\n  return ensureHash(parts);\n};\n\n// ========== UTILITIES ==========\nconst getItemJson = (item) => (item && item.json ? item.json : item || {});\n\n// ====================================================================\n// MAIN LOGIC\n// ====================================================================\n\ntry {\n  const allInputs = items || [];\n  console.log(`\\n========== MERGE NODE START ==========`);\n  console.log(`Total inputs received: ${allInputs.length}`);\n\n  // ========== STEP 1: ANALYZE AND SELECT INPUT ==========\n  allInputs.forEach((item, idx) => {\n    const json = getItemJson(item);\n    console.log(`\\nInput ${idx} analysis:`, {\n      hasApproved: json.hasOwnProperty('approved'),\n      approvedValue: json.approved,\n      hasData: !!json.data,\n      dataApproved: json.data?.approved,\n      hasPlatformPosts: !!json.platform_posts,\n      hasOutput: !!json.output,\n      hasOutputPlatformPosts: !!json.output?.platform_posts,\n      hasOriginalComplete: !!json.original_complete_content,\n      hasRoutePlatformPosts: !!json._route?.platform_posts,\n      rsTag: json._rs === true\n    });\n  });\n\n  let finalContent = null;\n  let dataSource = 'Unknown';\n  let isApproved = false;\n  let selectedInputIndex = -1;\n\n  // NEW PRIORITY 0: Regenerated (tagged or _route.platform_posts)\n  for (let i = 0; i < allInputs.length; i++) {\n    const json = getItemJson(allInputs[i]);\n    if (json._rs === true || (json._route && json._route.platform_posts)) {\n      finalContent = json;\n      dataSource = json._rs ? 'RS Reapproved (tag)' : 'RS via _route.platform_posts';\n      isApproved = false;\n      selectedInputIndex = i;\n      console.log(`\\n🔄 SELECTED Input ${i}: ${dataSource}`);\n      break;\n    }\n  }\n\n  // PRIORITY 1: APPROVED CONTENT\n  if (!finalContent) {\n    for (let i = 0; i < allInputs.length; i++) {\n      const json = getItemJson(allInputs[i]);\n      if (json.approved === true || json.data?.approved === true) {\n        finalContent = json;\n        dataSource = 'Approved Content';\n        isApproved = true;\n        selectedInputIndex = i;\n        console.log(`\\n✅ SELECTED Input ${i}: APPROVED CONTENT`);\n        break;\n      }\n    }\n  }\n\n  // PRIORITY 2: RS REGENERATING CONTENT (classic output.platform_posts)\n  if (!finalContent) {\n    console.log('\\n--- Searching for RS Regenerating Content (output.platform_posts) ---');\n\n    for (let i = 0; i < allInputs.length; i++) {\n      const json = getItemJson(allInputs[i]);\n\n      if (json.output?.platform_posts) {\n        const platforms = Object.keys(json.output.platform_posts);\n        console.log(`  Input ${i}: Found output.platform_posts with platforms:`, platforms);\n\n        let hasRealContent = false;\n        for (const p of platforms) {\n          const data = json.output.platform_posts[p];\n          const postText = data?.post || data?.content || data?.text || '';\n          console.log(`    ${p}: ${postText.length} chars`);\n          if (postText.length > 10) {\n            hasRealContent = true;\n          }\n        }\n\n        if (hasRealContent) {\n          finalContent = json;\n          dataSource = 'RS Regenerating Content';\n          isApproved = false;\n          selectedInputIndex = i;\n          console.log(`\\n🔄 SELECTED Input ${i}: RS REGENERATING CONTENT`);\n          break;\n        }\n      }\n    }\n\n    // Fallback: check other patterns\n    if (!finalContent) {\n      console.log('\\n--- No RS Regenerating found, checking other patterns ---');\n      for (let i = 0; i < allInputs.length; i++) {\n        const json = getItemJson(allInputs[i]);\n        if (json.approved === false || json.platform_posts || json.LinkedIn || json.Facebook || json.Twitter) {\n          finalContent = json;\n          dataSource = 'Other Regenerated Content';\n          isApproved = false;\n          selectedInputIndex = i;\n          console.log(`\\n🔄 SELECTED Input ${i}: OTHER REGENERATED`);\n          break;\n        }\n      }\n    }\n  }\n\n  // PRIORITY 3: FALLBACK\n  if (!finalContent) {\n    finalContent = getItemJson(allInputs[0]) || {};\n    dataSource = 'Fallback - First Input';\n    isApproved = false;\n    selectedInputIndex = 0;\n    console.log(`\\n⚠️ SELECTED Input 0: FALLBACK`);\n  }\n\n  console.log(`\\nFinal Selection: ${dataSource} | Approved: ${isApproved} | Input: ${selectedInputIndex}`);\n\n  // ========== STEP 2: EXTRACT PLATFORM DATA ==========\n  const extractPlatformData = (content) => {\n    const platforms = {};\n    const platformNames = ['LinkedIn', 'Facebook', 'Twitter', 'Instagram'];\n\n    platformNames.forEach(platform => {\n      const variations = [\n        content[platform],\n        content[platform.toLowerCase()],\n        content[platform.toUpperCase()]\n      ];\n\n      const found = variations.find(v => v !== undefined && v !== null);\n      if (found) platforms[platform] = found;\n    });\n\n    return platforms;\n  };\n\n  let platformPosts = {};\n\n  console.log('\\n========== EXTRACTING PLATFORM DATA ==========');\n  console.log('Available keys on finalContent:', Object.keys(finalContent));\n\n  // NEW PRIORITY A: RS data nested under _route.platform_posts (your regenerated shape)\n  if (finalContent._route?.platform_posts) {\n    console.log('Structure: RS under _route.platform_posts');\n    // If original content also exists and platforms_regenerated is given, prefer regenerated for those\n    if (finalContent.original_complete_content && Array.isArray(finalContent.platforms_regenerated)) {\n      const regeneratedPlatforms = finalContent.platforms_regenerated;\n      const PLATFORMS = ['LinkedIn', 'Facebook', 'Twitter', 'Instagram'];\n\n      PLATFORMS.forEach(platform => {\n        if (regeneratedPlatforms.includes(platform) && finalContent._route.platform_posts?.[platform]) {\n          platformPosts[platform] = finalContent._route.platform_posts[platform];\n          console.log(`  ${platform}: REGENERATED from _route.platform_posts`);\n        } else if (finalContent.original_complete_content?.[platform]) {\n          platformPosts[platform] = finalContent.original_complete_content[platform];\n          console.log(`  ${platform}: ORIGINAL from original_complete_content`);\n        }\n      });\n    } else {\n      // Simple case: take what is present under _route.platform_posts\n      platformPosts = finalContent._route.platform_posts;\n    }\n  }\n  // PRIORITY 1 (existing): Regenerated merged (output.platform_posts + original_complete_content)\n  else if (finalContent.output?.platform_posts && finalContent.original_complete_content) {\n    console.log('Structure: REGENERATED MERGED');\n    const regeneratedPlatforms = finalContent.platforms_regenerated || [];\n    const PLATFORMS = ['LinkedIn', 'Facebook', 'Twitter', 'Instagram'];\n\n    console.log('Platforms regenerated:', regeneratedPlatforms);\n\n    PLATFORMS.forEach(platform => {\n      if (regeneratedPlatforms.includes(platform) && finalContent.output?.platform_posts?.[platform]) {\n        platformPosts[platform] = finalContent.output.platform_posts[platform];\n        console.log(`  ${platform}: REGENERATED from output.platform_posts`);\n      }\n      else if (finalContent.original_complete_content?.[platform]) {\n        platformPosts[platform] = finalContent.original_complete_content[platform];\n        console.log(`  ${platform}: ORIGINAL from original_complete_content`);\n      }\n    });\n  }\n  // PRIORITY 2: Approved/Edited (only original_complete_content)\n  else if (finalContent.original_complete_content) {\n    console.log('Structure: APPROVED/EDITED with original_complete_content');\n    platformPosts = extractPlatformData(finalContent.original_complete_content);\n    console.log('Platforms found:', Object.keys(platformPosts));\n  }\n  // PRIORITY 3: Standard output.platform_posts\n  else if (finalContent.output?.platform_posts && Object.keys(finalContent.output.platform_posts).length > 0) {\n    platformPosts = finalContent.output.platform_posts;\n    console.log('Structure: output.platform_posts');\n  }\n  // PRIORITY 4: Root platform_posts\n  else if (finalContent.platform_posts && Object.keys(finalContent.platform_posts).length > 0) {\n    platformPosts = finalContent.platform_posts;\n    console.log('Structure: root platform_posts');\n  }\n  // PRIORITY 5: Individual platform keys\n  else {\n    platformPosts = extractPlatformData(finalContent);\n    console.log('Structure: individual platform keys');\n  }\n\n  const detectedPlatforms = Object.keys(platformPosts);\n  console.log('Final platforms:', detectedPlatforms);\n\n  // ========== STEP 3: BUILD CLEAN OUTPUT ==========\n  const PLATFORMS = ['LinkedIn', 'Facebook', 'Twitter', 'Instagram'];\n  const output = {};\n  const normalized = {};\n\n  console.log('\\n========== PROCESSING PLATFORMS ==========');\n\n  PLATFORMS.forEach(platform => {\n    let data = platformPosts[platform] || {};\n\n    if (typeof data === 'string') {\n      data = { post: data };\n    }\n\n    const rawPost  = data.post || data.caption || data.content || data.text || data.message || data.body || '';\n    const rawImage = data.image_suggestion || data.image || data.imagePrompt || data.image_prompt || data.visual_suggestion || '';\n    const rawCTA   = data.call_to_action || data.cta || '';\n\n    console.log(`\\n${platform}: ${rawPost.length} chars`);\n\n    const cleanPost  = removeAllBackslashN(rawPost);\n    const cleanImage = removeAllBackslashN(rawImage);\n    const cleanCTA   = removeAllBackslashN(rawCTA);\n\n    const hashtagsArray = parseHashtagsToArray(data.hashtags);\n    const hashtagsLine  = hashtagsArray.length > 0 ? hashtagsArray.join(' ') : '';\n\n    const textParts = [];\n    if (cleanPost)   textParts.push(cleanPost);\n    if (hashtagsLine) textParts.push(hashtagsLine);\n    if (cleanCTA)    textParts.push(cleanCTA);\n\n    let finalText = textParts.join(' ');\n    finalText = removeAllBackslashN(finalText);\n    finalText = finalText.replace(/\\s{2,}/g, ' ').trim();\n\n    const finalImage = removeAllBackslashN(cleanImage);\n\n    console.log(`  Final: ${finalText.length} chars | Clean: ${!finalText.includes('\\n') && !finalText.includes('\\\\n')}`);\n\n    output[`imagePrompt_${platform}`]   = finalImage;\n    output[`finalPostText_${platform}`] = finalText;\n\n    normalized[platform] = {\n      image_suggestion: finalImage,\n      post: cleanPost,\n      hashtags: hashtagsArray,\n      call_to_action: cleanCTA,\n      final_text: finalText\n    };\n  });\n\n  // ========== VALIDATION ==========\n  const hasAnyContent = Object.values(output).some(val => String(val || '').trim().length > 0);\n\n  console.log('\\n========== VALIDATION ==========');\n  console.log('Has content:', hasAnyContent);\n  console.log('========== MERGE NODE END ==========\\n');\n\n  // ========== RETURN FINAL OUTPUT ==========\n  return [\n    {\n      json: {\n        ...output,\n        platform_posts: normalized,\n        dataSource,\n        approved: isApproved,\n        _metadata: {\n          source: dataSource,\n          selectedInputIndex,\n          inputCount: allInputs.length,\n          platformsProcessed: PLATFORMS,\n          platformsFound: detectedPlatforms,\n          hasContent: hasAnyContent,\n          timestamp: new Date().toISOString()\n        }\n      }\n    }\n  ];\n\n} catch (error) {\n  console.error('\\n❌ ERROR IN MERGE NODE:', error.message);\n  console.error('Stack:', error.stack);\n\n  return [\n    {\n      json: {\n        imagePrompt_LinkedIn: '',\n        finalPostText_LinkedIn: '',\n        imagePrompt_Facebook: '',\n        finalPostText_Facebook: '',\n        imagePrompt_Twitter: '',\n        finalPostText_Twitter: '',\n        imagePrompt_Instagram: '',\n        finalPostText_Instagram: '',\n        platform_posts: {},\n        dataSource: 'Error',\n        approved: false,\n        _metadata: {\n          error: error.message,\n          timestamp: new Date().toISOString()\n        }\n      }\n    }\n  ];\n}\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4544,
+        -160
+      ],
+      "id": "a49c3eb5-4179-45bf-a8d5-84b002519865",
+      "name": "Code8"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Platform: {{ $json.meta.selected_platforms }}\n\nMaster constraints:\n\"\"\"{{$json.master_prompt}}\"\"\"\n\nOriginal post:\n\"\"\"{{$json.original_content}}\"\"\"\n\nChange request:\n\"\"\"{{$json.prompt || $json.facebook_prompt || $('Form').item.json.LinkedIn || $('Form').item.json.Instagram_prompt || $('Form').item.json.twitter_prompt }}\"\"\"\n\nYour task is to rewrite the post text based on the change request. The rewritten content must be **creative**, **engaging**, and **appropriate** for the selected platform(s). You should create a **new version** of the post that adheres to the change request, not just a minor edit.\n\nMake sure that:\n1. The content feels **fresh** and is an **improvement** over the original post.\n2. The tone is **professional** and **platform-appropriate** (e.g., LinkedIn, Instagram, Twitter).\n3. The content should include an **engaging call to action** and **relevant hashtags** for the platform.\n4. Suggest an **image** that complements the new content.\n\nOutput the result as a **single raw JSON object** with the following structure:\n\n{\n  \"platform_posts\": {\n    \"LinkedIn\": {\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\",\n      \"post\": \"The complete, rewritten text of the social media post. This should be a creative and significant improvement based on the change request, not just a minor edit.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"call_to_action\": \"An engaging call to action for LinkedIn\"\n    },\n    \"Instagram\": {\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\",\n      \"caption\": \"The complete, rewritten text of the social media post.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"emojis\": [\"😊\", \"🎉\"],\n      \"call_to_action\": \"An engaging call to action for Instagram\"\n    },\n    \"Facebook\": {\n      \"post\": \"The complete, rewritten text of the social media post.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"call_to_action\": \"An engaging call to action for Facebook\",\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\"\n    },\n    \"Twitter\": {\n      \"video_suggestion\": \"A suggestion for a video to accompany the post\",\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\",\n      \"post\": \"The complete, rewritten text of the social media post.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"character_limit\": 280\n    },\n    \"YouTube_Shorts\": {\n      \"video_suggestion\": \"A suggestion for a video to accompany the post.\",\n      \"title\": \"The title for the YouTube Shorts video\",\n      \"description\": \"A short description of the YouTube Shorts video\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"call_to_action\": \"An engaging call to action for YouTube Shorts\"\n    }\n  }\n}\n",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an expert social media copy editor. Your task is to rewrite a social media post based on an approver's change request. You must adhere to all master constraints and output a complete, valid JSON object.\n\n## MASTER CONSTRAINTS\n{{ $json.master_prompt }}\n\n## PLATFORM TO REWRITE\n{{ $json.meta.selected_platforms }}\n\n## ORIGINAL POST\n{{ $json.original_content }}\n\n## APPROVER'S CHANGE REQUEST\n{{ $json.prompt || $json.facebook_prompt || $('Form').item.json.LinkedIn || $('Form').item.json.Instagram_prompt || $('Form').item.json.twitter_prompt }}\n\n## YOUR TASK & OUTPUT FORMAT\nCarefully rewrite the post based on the change request. Your entire response MUST be a single, raw JSON object and nothing else. Do not add any text, explanations, or markdown fences like ```json.\n\nThe JSON object must have the following structure:\n{\n  \"platform_posts\": {\n    \"LinkedIn\": {\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\",\n      \"post\": \"The complete, rewritten text of the social media post. This should be a creative and significant improvement based on the change request, not just a minor edit.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"call_to_action\": \"An engaging call to action for LinkedIn\"\n    },\n    \"Instagram\": {\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\",\n      \"caption\": \"The complete, rewritten text of the social media post.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"emojis\": [\"😊\", \"🎉\"],\n      \"call_to_action\": \"An engaging call to action for Instagram\"\n    },\n    \"Facebook\": {\n      \"post\": \"The complete, rewritten text of the social media post.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"call_to_action\": \"An engaging call to action for Facebook\",\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\"\n    },\n    \"Twitter\": {\n      \"video_suggestion\": \"A suggestion for a video to accompany the post\",\n      \"image_suggestion\": \"A new, creative suggestion for an image that matches the rewritten post.\",\n      \"post\": \"The complete, rewritten text of the social media post.\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"character_limit\": 280\n    },\n    \"YouTube_Shorts\": {\n      \"video_suggestion\": \"A suggestion for a video to accompany the post.\",\n      \"title\": \"The title for the YouTube Shorts video\",\n      \"description\": \"A short description of the YouTube Shorts video\",\n      \"hashtags\": [\"#hashtag1\", \"#hashtag2\"],\n      \"call_to_action\": \"An engaging call to action for YouTube Shorts\"\n    }\n  }\n}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        3392,
+        240
+      ],
+      "id": "449a9555-e92a-4626-81e9-6303d31d501e",
+      "name": "RS Regenrating content"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Store Original Content Node\nconst response = items[0].json;\n\n// Debug to find where the actual content is\nconsole.log(\"Full response keys:\", Object.keys(response));\n\n// The content might come from RS content or Code1 node\n// Try different possible locations\nlet platformContent = {};\n\n// Check if the content is directly in the response\nif (response.LinkedIn || response.Twitter || response.Instagram || response.Facebook) {\n  platformContent = {\n    LinkedIn: response.LinkedIn || {},\n    Twitter: response.Twitter || {},\n    Instagram: response.Instagram || {},\n    Facebook: response.Facebook || {}\n  };\n} \n// Or if it's nested under output\nelse if (response.output?.platform_posts) {\n  platformContent = response.output.platform_posts;\n}\n// Or if it's under a different structure\nelse {\n  // Try to get from the RS content node that generated it\n  try {\n    const rsData = $('RS content').item.json;\n    platformContent = rsData.output?.platform_posts || rsData.platform_posts || {};\n  } catch(e) {\n    console.log(\"Could not get RS content data\");\n  }\n}\n\nreturn [{\n  json: {\n    ...response,\n    original_complete_content: platformContent,\n    all_platforms: ['LinkedIn', 'Twitter', 'Instagram', 'Facebook']\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2480,
+        -176
+      ],
+      "id": "9acd3d02-ebfb-446d-8515-202c501a4fce",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2018298c-5249-42d1-a77e-fdc28041bfe8",
+              "name": "original_complete_content",
+              "value": "={{ $('Code2').item.json.original_complete_content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3024,
+        32
+      ],
+      "id": "0acab35e-474a-4546-94c0-803309bc6781",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = items[0].json;\nconst newGeneratedContent = data.output?.platform_posts || {};\n\n// Try to get original content from multiple sources\nlet originalCompleteContent = data.original_complete_content || {};\n\n// If original content is empty, fetch it directly from the source\nif (Object.keys(originalCompleteContent).length === 0) {\n  try {\n    // Get from Code2 (Store Original Content node)\n    const storeNode = $('Code2').item.json;\n    originalCompleteContent = storeNode.original_complete_content || {};\n    console.log(\"Retrieved original from Code2:\", Object.keys(originalCompleteContent));\n  } catch(e) {\n    console.log(\"Could not retrieve from Code2\");\n  }\n}\n\n// Determine which platforms were regenerated\nconst regeneratedPlatforms = Object.keys(newGeneratedContent);\nconst allPlatforms = ['LinkedIn', 'Twitter', 'Instagram', 'Facebook'];\n\nconsole.log(\"Regenerated platforms:\", regeneratedPlatforms);\nconsole.log(\"Original platforms available:\", Object.keys(originalCompleteContent));\n\n// Build final merged content\nconst finalMerged = {};\n\nallPlatforms.forEach(platform => {\n  if (newGeneratedContent[platform]) {\n    // Platform was regenerated - use new content\n    finalMerged[platform] = newGeneratedContent[platform];\n    console.log(`${platform}: Using NEW content`);\n  } else if (originalCompleteContent[platform]) {\n    // Platform was NOT regenerated - use original\n    finalMerged[platform] = originalCompleteContent[platform];\n    console.log(`${platform}: Using ORIGINAL content`);\n  }\n});\n\nconsole.log(\"Final merged platforms:\", Object.keys(finalMerged));\n\nreturn [{\n  json: {\n    ...data,\n    output: {\n      platform_posts: finalMerged\n    },\n    original_complete_content: originalCompleteContent,\n    platforms_regenerated: regeneratedPlatforms\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3696,
+        240
+      ],
+      "id": "bbe2740a-7d3c-45b3-8946-9bd870dc39d1",
+      "name": "Merge node"
+    },
+    {
+      "parameters": {
+        "resume": "form",
+        "formTitle": "Form",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "platforms_to_change",
+              "fieldType": "checkbox",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "facebook"
+                  },
+                  {
+                    "option": "instagram"
+                  },
+                  {
+                    "option": "linkdln"
+                  },
+                  {
+                    "option": "twitter"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "global_prompt",
+              "placeholder": "Enter prompt here "
+            },
+            {
+              "fieldLabel": "facebook_prompt",
+              "placeholder": "Enter prompt here"
+            },
+            {
+              "fieldLabel": "Instagram_prompt",
+              "placeholder": "Enter prompt here"
+            },
+            {
+              "fieldLabel": "twitter_prompt",
+              "placeholder": "Enter prompt here"
+            },
+            {
+              "fieldLabel": "LinkedIn",
+              "placeholder": "Enter prompt here"
+            }
+          ]
+        },
+        "options": {
+          "webhookSuffix": "{{$json.wait_resume_key}}"
+        }
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3424,
+        16
+      ],
+      "id": "a689a9a8-e3ed-4699-9cdf-baa838ae7dbc",
+      "name": "Form",
+      "webhookId": "c69c68bb-7c56-487b-bab5-f073d3bf1746"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Take the input items\nfor (const item of items) {\n  // Force set approved_data to boolean true if it contains \"true\" anywhere\n  const inputValue = String(item.json.approved_data || item.json.data?.approved || '').toLowerCase();\n  \n  if (inputValue.includes('true') || inputValue === 'true' || inputValue === true) {\n    item.json.approved_data = true;  // Set as actual boolean\n  } else {\n    item.json.approved_data = false; // Set as actual boolean\n  }\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3328,
+        560
+      ],
+      "id": "63eae575-8a7d-4477-84f8-1c23d48187ce",
+      "name": "Code4"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post_id": "={{ $json.urn.split(':')[3] }}",
+            "platform": "linkedin",
+            "status": "active",
+            "created_date": "={{ new Date().toLocaleDateString() }}",
+            "original-id": "={{ $json.urn }}"
+          },
+          "matchingColumns": [
+            "post_id"
+          ],
+          "schema": [
+            {
+              "id": "post_id",
+              "displayName": "post_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "original-id",
+              "displayName": "original-id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_date",
+              "displayName": "created_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "post_url",
+              "displayName": "post_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "impressions",
+              "displayName": "impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "likes",
+              "displayName": "likes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "comments",
+              "displayName": "comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "engagement_rate",
+              "displayName": "engagement_rate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        5696,
+        -240
+      ],
+      "id": "2bc6dac9-c79c-421e-8be9-ac2b2fb5212b",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "z5k9yZEXpsMCQLh8",
+          "name": "Google Sheets account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "platform": "twitter",
+            "status": "active",
+            "post_id": "={{ $json.id }}",
+            "created_date": "={{ new Date().toLocaleDateString() }}"
+          },
+          "matchingColumns": [
+            "post_id"
+          ],
+          "schema": [
+            {
+              "id": "post_id",
+              "displayName": "post_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "original-id",
+              "displayName": "original-id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_date",
+              "displayName": "created_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "post_url",
+              "displayName": "post_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "impressions",
+              "displayName": "impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "likes",
+              "displayName": "likes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "comments",
+              "displayName": "comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "engagement_rate",
+              "displayName": "engagement_rate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        5536,
+        -64
+      ],
+      "id": "64dc0088-f15a-4e43-ad96-f8ab90f9a20b",
+      "name": "Append or update row in sheet",
+      "retryOnFail": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "z5k9yZEXpsMCQLh8",
+          "name": "Google Sheets account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "706212269251230",
+        "edge": "photos",
+        "sendBinaryData": true,
+        "binaryPropertyName": "data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('Switch').item.json.finalFacebookText_Text }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        5536,
+        128
+      ],
+      "id": "66195806-6c04-4aa8-b28d-20d3f29cae90",
+      "name": "Facebook Graph API",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "rQgMFsQwTM6pubZ7",
+          "name": "Facebook Graph account 15"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "=Create a minimalist mental health awareness poster in English language. Use Vibrant colors.\n\nImage prompt: {{ $json.imagePrompt_Facebook }}\n\n\n\nText in English only:\n- Top: \"World Mental Health Day\" visible over the background.\n- Bottom: \"Your mind matters\" or \"Take care of your mental health\" in darker blue font\n\nDesign: Clean minimalist style, soft shadows, rounded shapes, calming color palette.\n\n\n\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        5312,
+        128
+      ],
+      "id": "30b315ce-6cc1-4c10-a0e4-aadb493ae909",
+      "name": "Generate an image",
+      "credentials": {
+        "openAiApi": {
+          "id": "cjs1B2cM04Fo13Zj",
+          "name": "OpenAi account 9"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16TgeZA3tacKKa1eBc1vwsXgHOPV7lSyOdKrQk-jHXyc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post_id": "={{ $json.post_id }}",
+            "platform": "Facebook",
+            "status": "active",
+            "created_date": "={{ new Date().toLocaleDateString() }}",
+            "original-id": "={{ $json.id }}"
+          },
+          "matchingColumns": [
+            "post_id"
+          ],
+          "schema": [
+            {
+              "id": "post_id",
+              "displayName": "post_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "original-id",
+              "displayName": "original-id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_date",
+              "displayName": "created_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "post_url",
+              "displayName": "post_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "impressions",
+              "displayName": "impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "likes",
+              "displayName": "likes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "comments",
+              "displayName": "comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "engagement_rate",
+              "displayName": "engagement_rate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        5744,
+        128
+      ],
+      "id": "bfd84788-f12b-406c-acd7-731afe98b4b2",
+      "name": "Append or update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "z5k9yZEXpsMCQLh8",
+          "name": "Google Sheets account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "=Create a minimalist mental health awareness poster in English language. Use Vibrant colors.\n\nImage prompt: {{ $json.imagePrompt_instagram }}\n\n\n\nText in English only:\n- Top: \"World Mental Health Day\" visible over the background.\n- Bottom: \"Your mind matters\" or \"Take care of your mental health\" in darker blue font\n\nDesign: Clean minimalist style, soft shadows, rounded shapes, calming color palette.\n\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        4656,
+        2240
+      ],
+      "id": "e8265eac-4352-4e33-9e54-34a79a615a2b",
+      "name": "Generate an image1",
+      "credentials": {
+        "openAiApi": {
+          "id": "cjs1B2cM04Fo13Zj",
+          "name": "OpenAi account 9"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.imgbb.com/1/upload?key=d0318e3195ad40114692e705d522dd72",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "image",
+              "value": "={{ $json.imageBase64 }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5072,
+        2240
+      ],
+      "id": "b2b19894-5f2b-4e88-8b98-4ffff92f5879",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "destinationKey": "imageBase64",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        4864,
+        2240
+      ],
+      "id": "901e9051-98fa-4e15-96a7-0b20ffba2411",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/17841476666105043/media",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "image_url",
+              "value": "={{ $json.data.url }}"
+            },
+            {
+              "name": "caption",
+              "value": "={{ $('Edit Fields').item.json.finalInstagramText_Text }}"
+            },
+            {
+              "name": "access-token",
+              "value": "EAATtuLYpQ0ABPsJu5fOVZAVjBoA9owEKoTwTJNTyQexXqpKGcEEJXwvP7pFWa5xqv1m7dZBCq0rpqq5zt9ycjFS45yt0lZCpcfDjXXcJUyEfkcqkvaxfRZBeZCfOrt9Gwzv27dj6zvB8Tu6d4y1qD6kseGhikcl6rZC4SgZBK2duu0CuDqWiuNUvF2DLfsPD2O9"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5264,
+        2240
+      ],
+      "id": "48111534-2113-4050-8927-5a6169ab5575",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse email replies - SCALABLE + ROBUST + CLEAN (v5.3-hash)\n\n// ---- INPUT -----------------------------------------------------------------\nconst inputData = $input.all()[0].json;\n\n// ---- CONFIG ----------------------------------------------------------------\nconst CONFIG = {\n  maxPostLength: 5000,\n  maxImageLength: 500,\n  maxHashtags: 30,\n  platforms: {\n    'X-Twitter': ['Twitter/X', 'Twitter', 'X'],\n    'LinkedIn': ['LinkedIn', 'Linkedin', 'LINKEDIN'],\n    'Facebook': ['Facebook', 'FB', 'Meta']\n  }\n};\n\n// ---- HELPERS ---------------------------------------------------------------\nconst toRealNewlines = (s) =>\n  String(s || '')\n    .replace(/\\r\\n/g, '\\n')\n    .replace(/\\\\r\\\\n/g, '\\n')   // literal \"\\r\\n\"\n    .replace(/\\\\n/g, '\\n');     // literal \"\\n\"\n\nconst toInline = (s) =>\n  String(s || '')\n    .replace(/\\r/g, '')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .replace(/[ \\t]+\\n/g, '\\n')\n    .replace(/\\n/g, ' ')\n    .replace(/\\s{2,}/g, ' ')\n    .trim();\n\nconst stripStars = (s) => String(s || '').replace(/^\\*+|\\*+$/g, '').trim();\n\nconst stopBefore = (text, stopTokens) => {\n  const idxs = stopTokens\n    .map((re) => {\n      const m = text.search(re);\n      return m === -1 ? null : m;\n    })\n    .filter((v) => v !== null);\n  if (!idxs.length) return text;\n  return text.slice(0, Math.min(...idxs));\n};\n\n// Ensure every tag starts with '#'\nconst ensureHash = (arr) => (arr || []).map(t => {\n  const s = String(t).trim();\n  return s.startsWith('#') ? s : `#${s}`;\n});\n\n// Tokens (accept *, **, underscores, casings)\nconst CTA_TOKEN  = /(?:^\\s*)?(?:\\*+)?\\s*(?:Call\\s*to\\s*Action|CTA|call_to_action)(?:\\s*\\*+)?\\s*:\\s*/im;\nconst TAGS_TOKEN = /(?:^\\s*)?(?:\\*+)?\\s*(?:Tags?|Hashtags?)(?:\\s*\\*+)?\\s*:\\s*/im;\n\n// ---- EMAIL BODY (MULTI-FALLBACK) -------------------------------------------\nlet emailBody =\n  inputData.text ||\n  (inputData.textAsHtml\n    ? inputData.textAsHtml.replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ')\n    : '') ||\n  inputData.snippet ||\n  '';\n\ntry {\n  emailBody = toRealNewlines(emailBody)\n    .split(/On .+wrote:/)[0]\n    .split('---------- Forwarded message')[0]\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&[^;]+;/g, ' ')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/[ \\t]+\\n/g, '\\n')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .trim();\n} catch (error) {\n  console.error('Error cleaning email:', error);\n  emailBody = toRealNewlines(inputData.text || inputData.textAsHtml || '');\n}\n\nif (!emailBody) {\n  return [{ json: { error: 'No email content found', debug: { availableKeys: Object.keys(inputData) } } }];\n}\n\nconsole.log('Processing email with length:', emailBody.length);\n\n// ---- METADATA --------------------------------------------------------------\nconst threadId = inputData.threadId || '';\nconst fromEmail = inputData.From || inputData.from || '';\nconst subject = inputData.Subject || inputData.subject || '';\nconst topic = (subject || '')\n  .replace(/^(Re:|RE:|Fwd:|FWD:)?\\s*(Approval Needed:)?\\s*/i, '')\n  .trim() || 'FOR APPROVAL';\n\n// ---- CONTENT EXTRACTION ----------------------------------------------------\nconst extractContent = (fullEmailBody) => {\n  const result = { platform_posts: {} };\n\n  // Platform blocks: accept header with or without colon; content can start next line\n  const mkPlatformRegex = (names, others) =>\n    new RegExp(\n      String.raw`(?:^|\\n)\\s*(?:\\*+)?\\s*(?:${names.join('|')})(?:\\s*\\*+)?\\s*:?\\s*(?:\\n+|\\s*)` + // header\n      String.raw`([\\s\\S]+?)` + // capture section\n      String.raw`(?=(?:^|\\n)\\s*(?:\\*+)?\\s*(?:${others.join('|')})(?:\\s*\\*+)?\\s*:?\\s*(?:\\n+|\\s*)|$)`,\n      'i'\n    );\n\n  const namesFB = ['Facebook','FB'];\n  const namesLI = ['LinkedIn'];\n  const namesX  = ['Twitter\\\\/X','Twitter','X-Twitter','X'];\n\n  const reFB = mkPlatformRegex(namesFB, [...namesLI, ...namesX]);\n  const reLI = mkPlatformRegex(namesLI, [...namesFB, ...namesX]);\n  const reX  = mkPlatformRegex(namesX,  [...namesFB, ...namesLI]);\n\n  const platformPatterns = {\n    'Facebook': { regex: reFB },\n    'LinkedIn': { regex: reLI },\n    'X-Twitter': { regex: reX }\n  };\n\n  // Hashtag collector\n  const collectHashtags = (section) => {\n    const seen = new Set(), out = [];\n\n    // Structured line\n    const tagLine = section.match(TAGS_TOKEN);\n    if (tagLine) {\n      const start = tagLine.index + (tagLine[0] || '').length;\n      const line = (section.slice(start).split('\\n')[0] || '').trim();\n      const tags = line.match(/#[A-Za-z0-9_]+/g);\n      if (tags) {\n        for (const t of tags) {\n          const clean = t.slice(1);\n          if (!/^[0-9a-f]+$/i.test(clean) && !seen.has(clean)) {\n            seen.add(clean); out.push(clean);\n          }\n        }\n      }\n    }\n\n    // Fallback: anywhere\n    const anywhere = section.match(/#[A-Za-z0-9_]+/g);\n    if (anywhere) {\n      for (const t of anywhere) {\n        const clean = t.slice(1);\n        if (!/^[0-9a-f]+$/i.test(clean) && !seen.has(clean)) {\n          seen.add(clean); out.push(clean);\n        }\n      }\n    }\n\n    return out.slice(0, CONFIG.maxHashtags);\n  };\n\n  // Extract each platform\n  for (const [platform, cfg] of Object.entries(platformPatterns)) {\n    const m = fullEmailBody.match(cfg.regex);\n    if (!m || !m[1]) continue;\n\n    const section = m[1].trim();\n    const data = {};\n\n    // IMAGE\n    const imagePatterns = [\n      /(?:^\\s*)?(?:\\*+)?\\s*Image(?:\\s*\\*+)?\\s*:\\s*([\\s\\S]+?)(?=\\n\\s*(?:\\*+)?\\s*Post(?:\\s*\\*+)?\\s*:|$)/im,\n      /(?:^|\\n)\\s*(?:\\*+)?\\s*Image(?:\\s*\\*+)?\\s*:\\s*([^\\n]+)/im\n    ];\n    for (const ip of imagePatterns) {\n      const im = section.match(ip);\n      if (im && im[1]) {\n        data.image_suggestion = toInline(stripStars(im[1])).substring(0, CONFIG.maxImageLength);\n        break;\n      }\n    }\n\n    // POST (stop before CTA / TAGS / hashtag block)\n    const pm = section.match(/(?:^\\s*)?(?:\\*+)?\\s*Post(?:\\s*\\*+)?\\s*:\\s*([\\s\\S]+)$/im);\n    if (pm && pm[1]) {\n      let postBlock = stopBefore(pm[1], [\n        CTA_TOKEN, TAGS_TOKEN,\n        /(?:^|\\n)\\s*#[A-Za-z0-9_]/ // new line starting with a hashtag\n      ]);\n      postBlock = stripStars(postBlock);\n      data.post = toInline(postBlock).substring(0, CONFIG.maxPostLength);\n    }\n\n    // CTA (allow *call_to_action:* etc.)\n    if (platform !== 'X-Twitter') {\n      const ctaMatch = section.match(new RegExp(\n        CTA_TOKEN.source + '([\\\\s\\\\S]+?)(?=\\\\n\\\\s*(?:' + TAGS_TOKEN.source.slice(0, -3) + ')|$)',\n        'im'\n      ));\n      if (ctaMatch && ctaMatch[1]) {\n        const cta = stripStars(ctaMatch[1]);\n        data.call_to_action = toInline(cta);\n      }\n    }\n\n    // HASHTAGS (ALL PLATFORMS) -> ensure output has leading '#'\n    const hashtags = ensureHash(collectHashtags(section));\n    if (hashtags.length) data.hashtags = hashtags;\n\n    if (data.post || data.image_suggestion || data.hashtags?.length || data.call_to_action) {\n      result.platform_posts[platform] = data;\n      console.log(`✅ ${platform} extracted`, data);\n    }\n  }\n\n  return result;\n};\n\n// ---- RUN EXTRACTION --------------------------------------------------------\nlet editedContent = extractContent(emailBody);\n\n// ---- VALIDATION + GENERIC FALLBACK -----------------------------------------\nlet hasEdits = Object.keys(editedContent.platform_posts).length > 0;\n\nif (!hasEdits) {\n  console.log('⚠️ No structured platforms found, attempting fallback parsing...');\n  if (emailBody.match(/(?:^|\\n)\\s*(?:\\*+)?\\s*(?:Post|Image)(?:\\s*\\*+)?\\s*:/i)) {\n    // fallback hashtags from whole email\n    const collectFallbackHashtags = (txt) => {\n      const seen = new Set(), out = [];\n      const all = txt.match(/#[A-Za-z0-9_]+/g) || [];\n      for (const t of all) {\n        const clean = t.slice(1);\n        if (!/^[0-9a-f]+$/i.test(clean) && !seen.has(clean)) {\n          seen.add(clean); out.push(clean);\n        }\n      }\n      return out.slice(0, CONFIG.maxHashtags);\n    };\n\n    editedContent.platform_posts['Generic'] = {\n      post: toInline(stripStars(\n        emailBody.match(/(?:^|\\n)\\s*(?:\\*+)?\\s*Post(?:\\s*\\*+)?\\s*:\\s*([\\s\\S]+)/i)?.[1] || ''\n      )).substring(0, CONFIG.maxPostLength),\n      image_suggestion: toInline(stripStars(\n        emailBody.match(/(?:^|\\n)\\s*(?:\\*+)?\\s*Image(?:\\s*\\*+)?\\s*:\\s*([^\\n]+)/i)?.[1] || ''\n      )).substring(0, CONFIG.maxImageLength),\n      call_to_action: toInline(stripStars(\n        emailBody.match(new RegExp(CTA_TOKEN.source + '([\\\\s\\\\S]+)$', 'im'))?.[1] || ''\n      )),\n      // Ensure leading '#'\n      hashtags: ensureHash(collectFallbackHashtags(emailBody))\n    };\n    hasEdits = true;\n  }\n}\n\n// ---- RETURN ----------------------------------------------------------------\nreturn [{\n  json: {\n    topic: topic,\n    editedPlatforms: editedContent.platform_posts,\n    requesterEmail: fromEmail,\n    threadId: threadId,\n    messageId: inputData.id || '',\n    hasEdits: hasEdits,\n    platformCount: Object.keys(editedContent.platform_posts).length,\n    platforms: Object.keys(editedContent.platform_posts),\n    originalEmailPreview: emailBody.substring(0, 500) + (emailBody.length > 500 ? '...' : ''),\n    debug: {\n      bodyLength: emailBody.length,\n      foundPlatforms: Object.keys(editedContent.platform_posts),\n      stats: {\n        totalPlatforms: Object.keys(editedContent.platform_posts).length,\n        totalCharacters: Object.values(editedContent.platform_posts).reduce(\n          (sum, p) => sum + (p.post?.length || 0) + (p.image_suggestion?.length || 0),\n          0\n        ),\n        processingTime: new Date().toISOString()\n      }\n    },\n    metadata: {\n      processedAt: new Date().toISOString(),\n      parsingVersion: '5.3-hash',\n      config: CONFIG,\n      success: hasEdits\n    }\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3344,
+        -320
+      ],
+      "id": "67939ce3-af1a-48b8-947d-c545faf0492a",
+      "name": "Parse email replies"
+    },
+    {
+      "parameters": {
+        "jsCode": "// === Get ORIGINAL platform_posts in Code2 shape (Facebook, LinkedIn, Twitter only) ===\n\n// Helper: safely get a node's first item json\nconst getNodeJson = (name) => {\n  try {\n    const it = $items(name, 0, 0);\n    return Array.isArray(it) ? (it[0]?.json || {}) : (it?.json || {});\n  } catch (e) {\n    console.log(`Could not read node '${name}':`, e?.message || e);\n    return {};\n  }\n};\n\n// Helper: pick only L/T/F from a platform_posts-like object\nconst pickLTF = (obj = {}) => {\n  const out = {};\n  if (obj.LinkedIn != null) out.LinkedIn = obj.LinkedIn;\n  if (obj.Twitter  != null) out.Twitter  = obj.Twitter;\n  if (obj.Facebook != null) out.Facebook = obj.Facebook;\n  return out;\n};\n\n// 1) Candidate sources (in priority order)\nconst cur = items[0]?.json || {};\nconst candidates = [\n  cur.platform_posts,                 // already in desired shape\n  cur.output?.platform_posts,         // sometimes nested under output\n  getNodeJson('Code2').platform_posts, // from your Code2 node (as per screenshot)\n  getNodeJson('RS content').platform_posts,\n  getNodeJson('RS content').output?.platform_posts,\n];\n\n// 2) Take the first non-empty candidate\nlet source = {};\nfor (const c of candidates) {\n  if (c && typeof c === 'object' && Object.keys(c).length) {\n    source = c;\n    break;\n  }\n}\n\n// 3) Filter to LinkedIn, Twitter, Facebook only\nlet filtered = pickLTF(source);\n\n// 4) Guard: remove Instagram if present anywhere\nif ('Instagram' in filtered) delete filtered.Instagram;\n\n// 5) Ensure we return exactly the Code2-like structure\nreturn [{\n  json: {\n    platform_posts: filtered\n  }\n}];\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3568,
+        -320
+      ],
+      "id": "96d6545a-035d-450b-ad6c-c1a33be13c4c",
+      "name": "Get original content"
+    },
+    {
+      "parameters": {
+        "jsCode": "// === Merge parsed + original platform content with parsed priority ===\n// Platforms allowed\nconst ALLOWED = ['Facebook', 'LinkedIn', 'Twitter'];\n\n// Normalize platform names (map X variants to \"Twitter\")\nconst normalizeName = (name = '') => {\n  const n = String(name).trim();\n  if (/^(x-twitter|twitter\\/x|x)$/i.test(n)) return 'Twitter';\n  if (/^twitter$/i.test(n)) return 'Twitter';\n  if (/^facebook|^fb$/i.test(n)) return 'Facebook';\n  if (/^linkedin$/i.test(n)) return 'LinkedIn';\n  return n;\n};\n\n// Get a node's first item's json safely\nconst getNodeJson = (name) => {\n  try {\n    const it = $items(name, 0, 0);\n    return Array.isArray(it) ? (it[0]?.json || {}) : (it?.json || {});\n  } catch (e) {\n    console.log(`Could not read node '${name}':`, e?.message || e);\n    return {};\n  }\n};\n\n// 1) Pull parsed and original payloads\nconst parsedJson   = getNodeJson('Parse email replies');\nconst originalJson = getNodeJson('Get original content');\n\n// 2) Extract platform maps\n// Parsed may use `editedPlatforms` (your parser output) or `platform_posts` (alternate shape)\nconst parsedSrc = parsedJson.editedPlatforms || parsedJson.platform_posts || {};\nconst originalSrc = originalJson.platform_posts || originalJson || {};\n\n// 3) Normalize keys into flat objects for easy merge\nconst normalizeMap = (obj = {}) => {\n  const out = {};\n  for (const [k, v] of Object.entries(obj)) {\n    const nk = normalizeName(k);\n    if (!nk) continue;\n    out[nk] = v;\n  }\n  return out;\n};\n\nconst parsedMap   = normalizeMap(parsedSrc);\nconst originalMap = normalizeMap(originalSrc);\n\n// 4) Merge with priority to parsed per-platform; limit to ALLOWED\nconst merged = {};\nconst sources = {}; // optional: tells where each platform came from\n\nfor (const name of ALLOWED) {\n  if (parsedMap[name] != null && typeof parsedMap[name] === 'object') {\n    merged[name] = parsedMap[name];\n    sources[name] = 'parsed';\n  } else if (originalMap[name] != null && typeof originalMap[name] === 'object') {\n    merged[name] = originalMap[name];\n    sources[name] = 'original';\n  }\n}\n\n// 5) Build a friendly output (Code2-like)\nconst platforms = Object.keys(merged);\n\nreturn [{\n  json: {\n    platform_posts: merged,\n    platforms,\n    platformCount: platforms.length,\n    // helpful debug so you can see which platforms came from where\n    merge_sources: sources\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3760,
+        -320
+      ],
+      "id": "c4ddb1a5-c10c-4cb2-b95a-d2b9a2522fee",
+      "name": "Merge orginal+ edit content"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Initialize counter\nreturn {\n  json: {\n    loopCount: 0,\n    maxLoops: 6, // 6 loops × 20 sec = 2 minutes\n    emailFound: false,\n    sentTime: $node[\"Send message and wait for response\"].json.sentTime || new Date().toISOString()\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2752,
+        -320
+      ],
+      "id": "41fd4ef0-a86e-4249-9661-69fbeb4906a4",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2944,
+        -320
+      ],
+      "id": "4077c75e-4135-4b36-a05f-126e4e297157",
+      "name": "Wait",
+      "webhookId": "721fce5b-0c2c-4984-b05d-d49989b1dd8b"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 1,
+        "simple": false,
+        "filters": {
+          "includeSpamTrash": true,
+          "q": "Re: FOR APPROVAL",
+          "sender": "lavish@wellm.co"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3152,
+        -320
+      ],
+      "id": "746d79c8-358e-458f-a045-e9eb393b92d9",
+      "name": "Get many messages",
+      "webhookId": "472c2ef1-1917-44da-9040-85823fe60357",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "FtX6rezU8m3wqtX4",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c338ba26-3d3c-4c2a-bd25-d149e6d25ebb",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2944,
+        -176
+      ],
+      "id": "e6bdbc6f-0f8f-4309-b870-5decc4fc638c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3e2e0ccb-93e1-4c39-82c2-5cfae5a7ea23",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2816,
+        32
+      ],
+      "id": "ace04333-6604-4b6d-af8c-5c6fdd9a3e5a",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "content": "# Edited content",
+        "height": 240,
+        "width": 1296,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2672,
+        -400
+      ],
+      "typeVersion": 1,
+      "id": "74ebbfa4-9759-451c-bc7f-e5da9ff1118a",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c43d09d6-e40c-4b16-af6f-1630b8e688cb",
+              "name": "_route",
+              "value": "={{ $('Merge node').item.json.output }}",
+              "type": "object"
+            },
+            {
+              "id": "3b2b14c2-ccef-4dee-926b-cea76ef42fe0",
+              "name": "_rs",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3072,
+        256
+      ],
+      "id": "99745792-8bca-4741-abca-34b1157a802f",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "person": "o8hktnN6LG",
+        "text": "={{ $('Code8').item.json.finalPostText_Twitter }}",
+        "shareMediaCategory": "IMAGE",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        5504,
+        -240
+      ],
+      "id": "eea13a5d-cadc-4076-9646-235e2f08bf7f",
+      "name": "Create a post",
+      "credentials": {
+        "linkedInOAuth2Api": {
+          "id": "Sm0tgMAP99y5galF",
+          "name": "LinkedIn account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Social Media Content": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Social Media Content Factory",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail User for Approval": {
+      "main": [
+        []
+      ]
+    },
+    "Prepare Content Review Email": {
+      "main": [
+        [
+          {
+            "node": "Gmail User for Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Social Media Content Factory": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Prepare Content Review Email",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "RS content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "shivi content",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RS content": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "shivi content": {
+      "main": [
+        [
+          {
+            "node": "Prepare Content Review Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Social Media Content Factory",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "RS content",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "shivi content",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Send message and wait for response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "RS Regenrating content",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "RS Regenrating content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response1": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code6": {
+      "main": [
+        [
+          {
+            "node": "Send message and wait for response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reset form data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "RS content",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "RS Regenrating content",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reset form data": {
+      "main": [
+        [
+          {
+            "node": "Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "linkedin image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create Tweet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate an image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "linkedin image": {
+      "main": [
+        [
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Social Media Content Factory",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge4": {
+      "main": [
+        [
+          {
+            "node": "Code8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code8": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RS Regenrating content": {
+      "main": [
+        [
+          {
+            "node": "Merge node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge node": {
+      "main": [
+        [
+          {
+            "node": "Code6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Tweet": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook Graph API": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Facebook Graph API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse email replies": {
+      "main": [
+        [
+          {
+            "node": "Get original content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get original content": {
+      "main": [
+        [
+          {
+            "node": "Merge orginal+ edit content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge orginal+ edit content": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get many messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many messages": {
+      "main": [
+        [
+          {
+            "node": "Parse email replies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Create a post": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f1e8bcb8-6210-49a5-a32f-86854459c345",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0c43e22d92b836bc966b62f26ecec74e816f6171137b78a7576518472d634cf4"
+  },
+  "id": "yVrgiK1DcBuC5vQC",
+  "tags": []
+}
