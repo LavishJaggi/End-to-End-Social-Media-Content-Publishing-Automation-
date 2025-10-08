@@ -1,0 +1,114 @@
+{
+  "name": "social-media automation",
+  "nodes": [
+    // ... All your nodes go here ...
+    // For every node with credentials, use this placeholder:
+    // Example for Gmail:
+    {
+      "parameters": { /* ... */ },
+      "id": "2f349387-7941-464b-a6bf-c7bcdc3861d1",
+      "name": "Gmail User for Approval",
+      "type": "n8n-nodes-base.gmail",
+      "position": [2336, 1536],
+      "webhookId": "c46cf421-ddb6-45a8-b83b-80b381666f0e",
+      "typeVersion": 2.1,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "__REPLACE_GMAIL_CREDENTIAL_ID__",
+          "name": "__REPLACE_GMAIL_CREDENTIAL_NAME__"
+        }
+      }
+    },
+    // Repeat for all nodes with credentials:
+    // Google Sheets
+    {
+      "parameters": { /* ... */ },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [832, 208],
+      "id": "4f94b435-acce-4ef9-a80f-5aef4324904b",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "__REPLACE_GOOGLE_SHEETS_CREDENTIAL_ID__",
+          "name": "__REPLACE_GOOGLE_SHEETS_CREDENTIAL_NAME__"
+        }
+      }
+    },
+    // OpenAI
+    {
+      "parameters": { /* ... */ },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [2096, 2112],
+      "id": "841c4f20-413c-4e0e-b34f-78a9a51f8ff5",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "__REPLACE_OPENAI_CREDENTIAL_ID__",
+          "name": "__REPLACE_OPENAI_CREDENTIAL_NAME__"
+        }
+      }
+    },
+    // Facebook Graph API
+    {
+      "parameters": { /* ... */ },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [5536, 128],
+      "id": "66195806-6c04-4aa8-b28d-20d3f29cae90",
+      "name": "Facebook Graph API",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "__REPLACE_FACEBOOK_CREDENTIAL_ID__",
+          "name": "__REPLACE_FACEBOOK_CREDENTIAL_NAME__"
+        }
+      }
+    },
+    // Twitter
+    {
+      "parameters": { /* ... */ },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [5312, -64],
+      "id": "06213896-681a-424c-8766-1d249d018b10",
+      "name": "Create Tweet",
+      "retryOnFail": true,
+      "credentials": {
+        "twitterOAuth2Api": {
+          "id": "__REPLACE_TWITTER_CREDENTIAL_ID__",
+          "name": "__REPLACE_TWITTER_CREDENTIAL_NAME__"
+        }
+      }
+    },
+    // LinkedIn
+    {
+      "parameters": { /* ... */ },
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [5504, -240],
+      "id": "eea13a5d-cadc-4076-9646-235e2f08bf7f",
+      "name": "Create a post",
+      "credentials": {
+        "linkedInOAuth2Api": {
+          "id": "__REPLACE_LINKEDIN_CREDENTIAL_ID__",
+          "name": "__REPLACE_LINKEDIN_CREDENTIAL_NAME__"
+        }
+      }
+    }
+    // ... Rest of your nodes, replacing credential blocks as above ...
+  ],
+  "pinData": {},
+  "connections": { /* ... your workflow connections ... */ },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f1e8bcb8-6210-49a5-a32f-86854459c345",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0c43e22d92b836bc966b62f26ecec74e816f6171137b78a7576518472d634cf4"
+  },
+  "id": "yVrgiK1DcBuC5vQC",
+  "tags": []
+}
